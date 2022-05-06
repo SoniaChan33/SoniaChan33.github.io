@@ -108,4 +108,257 @@
         <tag>Linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>git</title>
+    <url>/2022/05/06/git/</url>
+    <content><![CDATA[<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>Git是一个免费的、开源的分布式版本控制系统，可以快速高效地处理从小型到大型的项目。</p>
+<p>版本控制：版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统 。</p>
+<h2 id="代码托管中心"><a href="#代码托管中心" class="headerlink" title="代码托管中心"></a>代码托管中心</h2><p>我们已经有了本地库，本地库可以帮我们进行版本控制，为什么还需要代码托管中心呢？<br>它的任务是帮我们维护远程库，下面说一下本地库和远程库的交互方式，也分为两种：</p>
+<ol>
+<li><p>团队内部协作</p>
+<img src="/2022/05/06/git/20210716160327.png" alt="image-20210716160327295" style="zoom: 50%;"></li>
+<li><p>跨团队协作</p>
+<img src="/2022/05/06/git/20210716160355.png" alt="image-20210716160355825" style="zoom:50%;">
+
+<p><a href="https://github.com/SoniaChan33/SoniaChan33.github.io">https://github.com/SoniaChan33/SoniaChan33.github.io</a></p>
+</li>
+</ol>
+<h2 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h2><ul>
+<li><p>创建一个文件夹</p>
+<img src="/2022/05/06/git/20210716160820.png" alt="image-20210716160820389" style="zoom: 50%;"></li>
+<li><p>打开Git终端：Git Bash Here</p>
+</li>
+<li><p>查看Git安装版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure></li>
+<li><p>清屏</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure></li>
+<li><p>设置签名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;TeaSea33&quot;</span><br><span class="line">git config --global user.email &quot;TeaSea33@outlook.com&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>本地仓库的初始化操作(目录在本地仓库里)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/06/git/20210716162158.png" alt="image-20210716162158453"></li>
+<li><p>查看.git下的内容</p>
+<img src="/2022/05/06/git/20210716162242.png" alt="image-20210716162242909" style="zoom: 50%;">
+
+<p>注意事项： .git目录下的本地库相关的子目录和子文件不要删除，不要胡乱修改。</p>
+</li>
+</ul>
+<h1 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h1><h2 id="add和commit"><a href="#add和commit" class="headerlink" title="add和commit"></a>add和commit</h2><ul>
+<li><p>先创建文件</p>
+</li>
+<li><p>将文件提交到暂存区</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add Demo2.txt</span><br></pre></td></tr></table></figure></li>
+<li><p>将暂存区的内容提交到本地库</p>
+<img src="/2022/05/06/git/20210716162745.png" alt="image-20210716162745742" style="zoom:67%;"></li>
+<li><p>注意：</p>
+<ol>
+<li>不放在本地仓库中的文件，git是不进行管理</li>
+<li>即使放在本地仓库的文件，git也不管理，必须通过add,commit命令操作才可以将内容提交到本地库。</li>
+</ol>
+</li>
+</ul>
+<h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2><p>查看工作区和暂存区的状态</p>
+<ul>
+<li><p>创建一个文件，然后查看状态</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/06/git/20210716163201.png" alt="image-20210716163201433" style="zoom:67%;"></li>
+<li><p>然后将Demo2.txt通过git add命令提交到暂存区</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add &quot;Demo3.txt&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>status查看状态</p>
+<img src="/2022/05/06/git/20210716163336.png" alt="image-20210716163335957" style="zoom:67%;"></li>
+<li><p>commit提交文件</p>
+<img src="/2022/05/06/git/20210716163613.png" alt="image-20210716163613057" style="zoom:67%;"></li>
+<li><p>修改文件 并查看状态</p>
+<img src="/2022/05/06/git/20210716163744.png" alt="image-20210716163744634" style="zoom:67%;"></li>
+<li><p>重新添加至暂存区 并查看状态</p>
+<img src="/2022/05/06/git/20210716163903.png" alt="image-20210716163903519" style="zoom:67%;"></li>
+<li><p>提交以后查看状态</p>
+<img src="/2022/05/06/git/20210716164259.png" alt="image-20210716164259073" style="zoom:67%;">
+
+<img src="/2022/05/06/git/20210716164315.png" alt="image-20210716164315251" style="zoom:67%;"></li>
+</ul>
+<h2 id="log"><a href="#log" class="headerlink" title="log"></a>log</h2><p>可以查看提交的日志，显示最近到最远的日志</p>
+<h3 id="日志展示方式"><a href="#日志展示方式" class="headerlink" title="日志展示方式"></a>日志展示方式</h3><ol>
+<li><p>```shell<br>git log </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">   &lt;img src=&quot;git/20210716165040.png&quot; alt=&quot;image-20210716164533294&quot; style=&quot;zoom:67%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">   ---&gt; 分页</span><br><span class="line"></span><br><span class="line">   当历史记录过多的时候使用**空格**翻页，**b**  回到上一页，到尾页显示END,</span><br><span class="line"></span><br><span class="line">   退出：**q**</span><br><span class="line"></span><br><span class="line">2. ```shell</span><br><span class="line">   git log --pretty=oneline</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/06/git/20210716165022.png" alt="image-20210716165022038" style="zoom:67%;"></li>
+<li><p>```shell<br>git log –oneline</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">   &lt;img src=&quot;git/20210716165148.png&quot; alt=&quot;image-20210716165147993&quot; style=&quot;zoom:67%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">4. ```shell</span><br><span class="line">   git reflog</span><br></pre></td></tr></table></figure>
+
+<p>多了信息：HEAD@{数字}</p>
+<p>数字：指针回到当前这个历史版本需要多少步</p>
+<img src="/2022/05/06/git/20210716165501.png" alt="image-20210716165500983" style="zoom:67%;"></li>
+</ol>
+<h2 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h2><p>前进或者后退历史版本</p>
+<ul>
+<li>先查看历史log状态</li>
+</ul>
+<img src="/2022/05/06/git/20210716172535.png" alt="image-20210716172535073" style="zoom:67%;">
+
+<ul>
+<li><p>将文件后退到版本1</p>
+<img src="/2022/05/06/git/20210716173722.png" alt="image-20210716173722034" style="zoom:67%;"></li>
+<li><p>再次查看</p>
+<img src="/2022/05/06/git/20210716173804.png" alt="image-20210716173804875" style="zoom:67%;"></li>
+</ul>
+<h3 id="三个参数-hard-mixed-soft"><a href="#三个参数-hard-mixed-soft" class="headerlink" title="三个参数(hard\mixed\soft)"></a>三个参数(hard\mixed\soft)</h3><p><strong>git reset –[参数] [索引]</strong></p>
+<ul>
+<li><p>hard</p>
+<p>本地库的指针移动的同时，重置暂存区，重置工作区</p>
+<img src="/2022/05/06/git/20210716190012.png" alt="image-20210716190011958" style="zoom: 33%;"></li>
+<li><p>mixed</p>
+<p>本地库的指针移动的同时，重置暂存区，但是工作区不动</p>
+<img src="/2022/05/06/git/20210716190039.png" alt="image-20210716190039546" style="zoom:33%;"></li>
+<li><p>soft</p>
+<p>本地库的指针移动的时候，暂存区，工作区都不动</p>
+<img src="/2022/05/06/git/20210716190052.png" alt="image-20210716190052572" style="zoom:33%;"></li>
+</ul>
+<p><strong>用得最多的就是第一种hard参数</strong></p>
+<h3 id="hard"><a href="#hard" class="headerlink" title="hard"></a>hard</h3><h4 id="1-找回本地库删除的文件"><a href="#1-找回本地库删除的文件" class="headerlink" title="1.找回本地库删除的文件"></a>1.找回本地库删除的文件</h4><ul>
+<li><p>新建一个Test2.txt文件 并将它add到暂存区中</p>
+<img src="/2022/05/06/git/20210716191040.png" alt="image-20210716191040843" style="zoom:67%;"></li>
+<li><p>再通过commit提交到本地库</p>
+<img src="/2022/05/06/git/20210716191249.png" alt="image-20210716191249904" style="zoom:67%;"></li>
+<li><p>删除工作区中的Test2.txt 并将删除操作同步到暂存区</p>
+<img src="/2022/05/06/git/20210716191505.png" alt="image-20210716191505941" style="zoom:67%;"></li>
+<li><p>将删除操作同步到本地库</p>
+<img src="/2022/05/06/git/20210716191516.png" alt="image-20210716191516088" style="zoom:67%;"></li>
+<li><p>查看日志</p>
+<img src="/2022/05/06/git/20210716191540.png" alt="image-20210716191540549" style="zoom:67%;"></li>
+<li><p>找到本地库中删除的文件，实际上就是将历史版本切换到刚才添加文件的那个版本即可</p>
+<img src="/2022/05/06/git/20210716191642.png" alt="image-20210716191642335" style="zoom:67%;"></li>
+</ul>
+<h4 id="2-找回暂存区删除的文件"><a href="#2-找回暂存区删除的文件" class="headerlink" title="2.找回暂存区删除的文件"></a>2.找回暂存区删除的文件</h4><ul>
+<li><p>删除工作区数据</p>
+<img src="/2022/05/06/git/20210716192257.png" alt="image-20210716192257627" style="zoom:67%;"></li>
+<li><p>同步到缓存区</p>
+<img src="/2022/05/06/git/20210716192305.png" alt="image-20210716192305650" style="zoom:67%;"></li>
+<li><p>查看日志</p>
+<img src="/2022/05/06/git/20210716192331.png" alt="image-20210716192331458" style="zoom:67%;"></li>
+<li><p>找到当前指针 然后返回到该状态</p>
+<img src="/2022/05/06/git/20210716192952.png" alt="image-20210716192952612" style="zoom:67%;">
+
+<img src="/2022/05/06/git/20210716193047.png" alt="image-20210716193047918" style="zoom:67%;"></li>
+</ul>
+<h2 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h2><ol>
+<li><p>比对<strong>工作区</strong>和<strong>暂存区</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git diff [文件名]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加并提交一个内容为aaaa的Test3.txt    </li>
+</ul>
+<img src="/2022/05/06/git/20210716195249.png" alt="image-20210716195249530" style="zoom:67%;">
+
+<ul>
+<li>更改工作区的文件加入bbb，再用dif进行比对，发现不同</li>
+</ul>
+<img src="/2022/05/06/git/20210716195504.png" alt="image-20210716195504098" style="zoom:67%;">
+
+
+
+<ul>
+<li>如果修改了多个文件，多个文件的比对命令直接是git diff</li>
+</ul>
+<img src="/2022/05/06/git/20210716195715.png" alt="image-20210716195715409" style="zoom:67%;"></li>
+<li><p>比对<strong>暂存区</strong>和<strong>本地库</strong> ：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git diff [历史版本] [文件]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>文件添加不提交到本地库，此时暂存区就和工作区相同为aaaabbb</p>
+</li>
+<li><p>查看日志</p>
+<img src="/2022/05/06/git/20210716202947.png" alt="image-20210716202947616" style="zoom:67%;">
+
+<p>此刻的本地库还停留在之前第一次修改</p>
+</li>
+<li><p>比对暂存区和本地库中的HEAD当前指针状态</p>
+<img src="/2022/05/06/git/20210716203057.png" alt="image-20210716203056977" style="zoom:67%;">
+
+<p>发现不一样，说明没有提交的时候就是不一样的</p>
+</li>
+<li><p>HEAD部分可以改成其他历史版本的标号</p>
+<img src="/2022/05/06/git/20210716203405.png" alt="image-20210716203405603" style="zoom:67%;"></li>
+</ul>
+</li>
+</ol>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>查看分支</p>
+<img src="/2022/05/06/git/20210716205522.png" alt="image-20210716205522520" style="zoom:67%;">
+
+<p>创建新分支</p>
+<img src="/2022/05/06/git/20210716205639.png" alt="image-20210716205639017" style="zoom:67%;">
+
+<p>切换分支</p>
+<img src="/2022/05/06/git/20210716205742.png" alt="image-20210716205742388" style="zoom: 67%;">
+
+<p>进入branch01分支，增加内容</p>
+<img src="/2022/05/06/git/20210716210648.png" alt="image-20210716210648550" style="zoom: 67%;">
+
+<img src="/2022/05/06/git/20210716210051.png" alt="image-20210716210051334" style="zoom:67%;">
+
+<p>再次查看两个分支发现主分支没有改变</p>
+<img src="/2022/05/06/git/20210716210157.png" alt="image-20210716210157353" style="zoom:67%;">
+
+<p>查看文件</p>
+<img src="/2022/05/06/git/20210716210515.png" alt="image-20210716210515711" style="zoom: 67%;">
+
+<p>将branch01合并到主分支</p>
+<img src="/2022/05/06/git/20210716211526.png" alt="image-20210716211526286" style="zoom: 67%;">
+
+<p>因为在同一文件的同一位置修改了文件</p>
+<img src="/2022/05/06/git/20210716211737.png" alt="image-20210716211737215" style="zoom:50%;">
+
+<p>解决冲突：</p>
+<p>人为决定，留下想要的就可以，然后再添加</p>
+<img src="/2022/05/06/git/20210716212101.png" alt="image-20210716212101854" style="zoom:67%;">
+
+<p>提交冲突，不能带文件名</p>
+<img src="/2022/05/06/git/20210716212214.png" style="zoom:67%;">
+
+<img src="/2022/05/06/git/20210716212214.png" alt="image-20210716212214847" style="zoom:67%;">
+
+
+
+
+
+<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>创建远程库</p>
+<p>为远程库取别名</p>
+<img src="/2022/05/06/git/20210717114246.png" alt="image-20210717114246916" style="zoom:67%;">
+
+<h3 id="将本地库数据推送到远程库中"><a href="#将本地库数据推送到远程库中" class="headerlink" title="将本地库数据推送到远程库中"></a>将本地库数据推送到远程库中</h3><img src="/2022/05/06/git/20210717114612.png" alt="image-20210717114612323" style="zoom:67%;">
+
+<img src="/2022/05/06/git/20210717114625.png" alt="image-20210717114625397" style="zoom:67%;">
+
+<img src="/2022/05/06/git/20210717114728.png" alt="image-20210717114728691" style="zoom:67%;">
+
+<p>查看远程库</p>
+<img src="/2022/05/06/git/20210717114756.png" alt="image-20210717114756656" style="zoom:67%;">
+
+
+
+
+
+<h1 id="SSH免密操作"><a href="#SSH免密操作" class="headerlink" title="SSH免密操作"></a>SSH免密操作</h1><ol>
+<li><p>进入用户的主目录中：</p>
+</li>
+<li><p>执行命令，生成一个.ssh目录</p>
+<img src="/2022/05/06/git/20210717204402.png" alt="image-20210717204402583" style="zoom: 67%;"></li>
+<li><p>发现.ssh目录下有两个文件</p>
+<img src="/2022/05/06/git/20210717204425.png" alt="image-20210717204425794" style="zoom:67%;"></li>
+<li><p>第二个文件里面的密钥复制，去github下新建密钥</p>
+</li>
+<li><p>密钥生成：</p>
+<img src="/2022/05/06/git/20210717144958.png" alt="image-20210717144958526" style="zoom:67%;"></li>
+</ol>
+<p>免密操作使每次需要push仓库的时候，都不用再输入密码434</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>
