@@ -12,6 +12,8 @@
 <li><p>安装node.js</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></li>
 </ul>
+<span id="more"></span>
+
 <h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-创建博客文件夹并初始化"><a href="#3-创建博客文件夹并初始化" class="headerlink" title="3.创建博客文件夹并初始化"></a>3.创建博客文件夹并初始化</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
