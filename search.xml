@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo + GitHub搭建个人博客2</title>
+    <url>/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/</url>
+    <content><![CDATA[<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1-前提准备："><a href="#1-前提准备：" class="headerlink" title="1.前提准备："></a>1.前提准备：</h3><ul>
+<li><p>安装git</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<p>验证</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git --version </span><br></pre></td></tr></table></figure></li>
+<li><p>安装node.js</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-创建博客文件夹并初始化"><a href="#3-创建博客文件夹并初始化" class="headerlink" title="3.创建博客文件夹并初始化"></a>3.创建博客文件夹并初始化</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-本地启动"><a href="#4-本地启动" class="headerlink" title="4.本地启动"></a>4.本地启动</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>访问本地链接：<a href>http://localhost:4000/</a></p>
+<p>显示如下页面，表示安装成功</p>
+<img src="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/image-20220506213244777.png" alt="image-20220506213244777" style="zoom:33%;">
+
+<h2 id="安装next主题"><a href="#安装next主题" class="headerlink" title="安装next主题"></a>安装next主题</h2><p>hexo官网主题：<a href>https://hexo.io/themes/</a></p>
+<p>这里以next为例</p>
+<h3 id="1-在创建文件夹下安装主题"><a href="#1-在创建文件夹下安装主题" class="headerlink" title="1.在创建文件夹下安装主题"></a>1.在创建文件夹下安装主题</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-修改文件夹下的-config-yml文件"><a href="#2-修改文件夹下的-config-yml文件" class="headerlink" title="2.修改文件夹下的_config.yml文件"></a>2.修改文件夹下的_config.yml文件</h3><img src="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/image-20220504215029708.png" alt="image-20220504215029708" style="zoom: 25%;">
+
+<p>修改theme为next</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+
+<p>再次访问页面：</p>
+<img src="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/image-20220504215421643.png" alt="image-20220504215421643" style="zoom: 33%;">
+
+<p>表示next主题安装成功</p>
+<h2 id="部署到github仓库"><a href="#部署到github仓库" class="headerlink" title="部署到github仓库"></a>部署到github仓库</h2><h3 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h3><p>仓库名<strong>严格按xxx.github.io</strong>来（xxx为github用户名 且 小写！</p>
+<img src="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/image-20220505154551563.png" alt="image-20220505154551563" style="zoom:33%;">
+
+<h3 id="2-配置SSH"><a href="#2-配置SSH" class="headerlink" title="2.配置SSH"></a>2.配置SSH</h3><p>如果已经配置过就跳过。</p>
+<p>生成SSH key</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 你的邮箱</span><br></pre></td></tr></table></figure>
+
+<p>这个邮箱是github绑定的邮箱</p>
+<p>然后登陆github，在Settings里面的SSH and GPG keys里面添加new SSH key</p>
+<img src="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/image-20220504220404992.png" alt="image-20220504220404992" style="zoom: 33%;">
+
+<p>验证是否成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/image-20220504221105797.png" alt="image-20220504221105797" style="zoom: 50%;">
+
+<h3 id="3-部署到github"><a href="#3-部署到github" class="headerlink" title="3.部署到github"></a>3.部署到github</h3><p>安装git部署插件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>打开_config.yml文件，地步修改部署配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:youname/youname.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>保存后终端执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在浏览器输入xxx.github.io就可以看到自己的一个博客了</p>
+<h2 id="常用的hexo命令"><a href="#常用的hexo命令" class="headerlink" title="常用的hexo命令"></a>常用的hexo命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo -g #安装Hexo</span><br><span class="line">npm update hexo -g #升级</span><br><span class="line">hexo init #初始化博客</span><br><span class="line"></span><br><span class="line">命令简写</span><br><span class="line">hexo n “我的博客” == hexo new “我的博客” #新建文章</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+</search>
