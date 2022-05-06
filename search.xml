@@ -73,4 +73,37 @@
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Linux学习</title>
+    <url>/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><ul>
+<li>启动网卡（仅针对单次可用）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">nmcli c up ens33</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改配置文件（永久可用）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/sysconfig/network-scripts/ifcfg-ens33</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png" alt="image-20210810165233126" style="zoom:33%;">
+
+<p>ONBOOT=yes</p>
+<p>NAT模式</p>
+<p>在VMWare中默认使用的NAT模式</p>
+<ul>
+<li>Network Address Translation 网络地址转换，</li>
+</ul>
+<p>为什么要求改网络类型：因为给NAT模式外界不能访问windows里面的操作系统</p>
+<p>改成桥接模式</p>
+<img src="/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png" alt="image-20210810165902006" style="zoom: 33%;">
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
 </search>

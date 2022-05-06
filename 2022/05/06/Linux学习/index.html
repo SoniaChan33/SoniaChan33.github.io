@@ -20,25 +20,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="不念过去，不惧未来，活在当下">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sonia33&#39;s Blog">
-<meta property="og:url" content="http://example.com/categories/hexo/index.html">
+    <meta name="description" content="常用配置启动网络 启动网卡（仅针对单次可用）  1# nmcli c up ens33   修改配置文件（永久可用）  1# vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33    ONBOOT&#x3D;yes NAT模式 在VMWare中默认使用的NAT模式  Network Address Translation 网络地址转换，  为什么要求改网络类型：因为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习">
+<meta property="og:url" content="http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Sonia33&#39;s Blog">
-<meta property="og:description" content="不念过去，不惧未来，活在当下">
+<meta property="og:description" content="常用配置启动网络 启动网卡（仅针对单次可用）  1# nmcli c up ens33   修改配置文件（永久可用）  1# vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33    ONBOOT&#x3D;yes NAT模式 在VMWare中默认使用的NAT模式  Network Address Translation 网络地址转换，  为什么要求改网络类型：因为">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png">
+<meta property="og:image" content="http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png">
+<meta property="article:published_time" content="2022-05-06T15:24:39.000Z">
+<meta property="article:modified_time" content="2022-05-06T15:27:35.276Z">
 <meta property="article:author" content="Sonia Chan">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png">
 
 
-<link rel="canonical" href="http://example.com/categories/hexo/">
+<link rel="canonical" href="http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/hexo/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/","path":"2022/05/06/Linux学习/","title":"Linux学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: hexo | Sonia33's Blog</title>
+<title>Linux学习 | Sonia33's Blog</title>
   
 
 
@@ -127,7 +133,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -140,6 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">常用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.</span> <span class="nav-text">启动网络</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,50 +200,122 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">hexo
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/iu.png">
+      <meta itemprop="name" content="Sonia Chan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sonia33's Blog">
+      <meta itemprop="description" content="不念过去，不惧未来，活在当下">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux学习 | Sonia33's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux学习
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-05-06 23:24:39 / 修改时间：23:27:35" itemprop="dateCreated datePublished" datetime="2022-05-06T23:24:39+08:00">2022-05-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><ul>
+<li>启动网卡（仅针对单次可用）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">nmcli c up ens33</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改配置文件（永久可用）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/sysconfig/network-scripts/ifcfg-ens33</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png" alt="image-20210810165233126" style="zoom:33%;">
+
+<p>ONBOOT=yes</p>
+<p>NAT模式</p>
+<p>在VMWare中默认使用的NAT模式</p>
+<ul>
+<li>Network Address Translation 网络地址转换，</li>
+</ul>
+<p>为什么要求改网络类型：因为给NAT模式外界不能访问windows里面的操作系统</p>
+<p>改成桥接模式</p>
+<img src="/2022/05/06/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png" alt="image-20210810165902006" style="zoom: 33%;">
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-06T10:24:55+08:00"
-              content="2022-05-06">
-          05-06
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/" itemprop="url">
-            <span itemprop="name">Hexo + GitHub搭建个人博客</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/" rel="prev" title="Hexo + GitHub搭建个人博客">
+                  <i class="fa fa-chevron-left"></i> Hexo + GitHub搭建个人博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 </div>
   </main>
