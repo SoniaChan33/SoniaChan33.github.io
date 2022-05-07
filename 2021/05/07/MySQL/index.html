@@ -23,67 +23,67 @@
     <meta name="description" content="引入1.数据库基本概念1.1 数据所谓数据（Data）是指对客观事物进行描述并可以鉴别的符号，这些符号是可识别的、抽象的。它不仅仅指狭义上的数字，而是有多种表现形式：字母、文字、文本、图形、音频、视频等。现在计算机存储和处理的数据范围十分广泛，而描述这些数据的符号也变得越来越复杂了。 1.2 数据库数据库（Database，DB）指的是以一定格式存放、能够实现多个用户共享、与应用程序彼此独立的数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL">
-<meta property="og:url" content="http://example.com/2022/05/07/MySQL/index.html">
+<meta property="og:url" content="http://example.com/2021/05/07/MySQL/index.html">
 <meta property="og:site_name" content="Sonia33&#39;s Blog">
 <meta property="og:description" content="引入1.数据库基本概念1.1 数据所谓数据（Data）是指对客观事物进行描述并可以鉴别的符号，这些符号是可识别的、抽象的。它不仅仅指狭义上的数字，而是有多种表现形式：字母、文字、文本、图形、音频、视频等。现在计算机存储和处理的数据范围十分广泛，而描述这些数据的符号也变得越来越复杂了。 1.2 数据库数据库（Database，DB）指的是以一定格式存放、能够实现多个用户共享、与应用程序彼此独立的数据">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210630201735.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210630201859.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701085258.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701105406.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701111051.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701112307.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701112344.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701113031.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701142452.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701142510.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701143713.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701143726.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701143737.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210701143749.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630210116.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630210456.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630223758.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630223819.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630223829.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630224323.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630224430.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630224453.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210630224611.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701170246.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701163643.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701170831.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701171121.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210701184545.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210702094750.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703110321.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703111005.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703111018.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703111036.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703142738.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210703152258.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210703152314.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210703152514.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210703152552.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210703152939.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703161609.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703161731.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703162005.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/20210703171452.png">
-<meta property="og:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210703191518.png">
-<meta property="article:published_time" content="2022-05-07T01:21:10.000Z">
-<meta property="article:modified_time" content="2022-05-07T01:24:43.054Z">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210630201735.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210630201859.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701085258.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701105406.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701111051.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701112307.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701112344.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701113031.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701142452.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701142510.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701143713.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701143726.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701143737.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210701143749.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630210116.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630210456.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630223758.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630223819.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630223829.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630224323.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630224430.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630224453.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210630224611.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701170246.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701163643.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701170831.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701171121.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210701184545.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210702094750.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703110321.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703111005.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703111018.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703111036.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703142738.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210703152258.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210703152314.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210703152514.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210703152552.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210703152939.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703161609.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703161731.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703162005.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/20210703171452.png">
+<meta property="og:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210703191518.png">
+<meta property="article:published_time" content="2021-05-07T01:21:10.000Z">
+<meta property="article:modified_time" content="2022-05-07T01:27:50.960Z">
 <meta property="article:author" content="Sonia Chan">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/05/07/MySQL/05/07/MySQL/20210630201735.png">
+<meta name="twitter:image" content="http://example.com/2021/05/07/MySQL/05/07/MySQL/20210630201735.png">
 
 
-<link rel="canonical" href="http://example.com/2022/05/07/MySQL/">
+<link rel="canonical" href="http://example.com/2021/05/07/MySQL/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/07/MySQL/","path":"2022/05/07/MySQL/","title":"MySQL"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/05/07/MySQL/","path":"2021/05/07/MySQL/","title":"MySQL"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>MySQL | Sonia33's Blog</title>
@@ -253,7 +253,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/07/MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/07/MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/iu.png">
@@ -281,9 +281,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-05-07 09:21:10 / 修改时间：09:24:43" itemprop="dateCreated datePublished" datetime="2022-05-07T09:21:10+08:00">2022-05-07</time>
+      <time title="创建时间：2021-05-07 09:21:10" itemprop="dateCreated datePublished" datetime="2021-05-07T09:21:10+08:00">2021-05-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-07 09:27:50" itemprop="dateModified" datetime="2022-05-07T09:27:50+08:00">2022-05-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,7 +320,7 @@
 <h3 id="1-5-数据库管理员"><a href="#1-5-数据库管理员" class="headerlink" title="1.5 数据库管理员"></a>1.5 数据库管理员</h3><p>数据库管理员（Database Administrator，DBA）是指对数据库管理系统进行操作的人员，其主要负责数据库的运营和维护。</p>
 <h3 id="1-6-最终用户"><a href="#1-6-最终用户" class="headerlink" title="1.6 最终用户"></a>1.6 最终用户</h3><p>最终用户（User）指的是数据库应用程序的使用者。用户面向的是数据库应用程序（通过应用程序操作数据），并不会直接与数据库打交道。</p>
 <h3 id="1-7-数据库系统"><a href="#1-7-数据库系统" class="headerlink" title="1.7 数据库系统"></a>1.7 数据库系统</h3><p>数据库系统（Database System，DBS）一般是由数据库、数据库管理系统、数据库应用程序、数据库管理员和最终用户构成。其中DBMS是数据库系统的基础和核心</p>
-<h2 id="2-数据库表列类型"><a href="#2-数据库表列类型" class="headerlink" title="2. 数据库表列类型"></a>2. 数据库表列类型</h2><h3 id="2-1-整数类型"><a href="#2-1-整数类型" class="headerlink" title="2.1 整数类型"></a>2.1 整数类型</h3><img src="/2022/05/07/MySQL/05/07/MySQL/20210630201735.png" class title="image-20210630201735014">
+<h2 id="2-数据库表列类型"><a href="#2-数据库表列类型" class="headerlink" title="2. 数据库表列类型"></a>2. 数据库表列类型</h2><h3 id="2-1-整数类型"><a href="#2-1-整数类型" class="headerlink" title="2.1 整数类型"></a>2.1 整数类型</h3><img src="/2021/05/07/MySQL/05/07/MySQL/20210630201735.png" class title="image-20210630201735014">
 
 <ol>
 <li><p>MySQL支持选择在该类型关键字后面的括号内指定整数值的<strong>显示宽度</strong>(例如，INT(4))。显示宽度并不限制可以在列内保存的值的范围，也不限制超过列的指定宽度的值的显示</p>
@@ -324,7 +330,7 @@
 <li><p>支持选择在该类型关键字后面的括号内指定整数值的显示宽度</p>
 </li>
 </ol>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210630201859.png" class title="image-20210630201859642">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210630201859.png" class title="image-20210630201859642">
 
 
 
@@ -372,7 +378,7 @@
 
 
 
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701085258.png" class title="image-20210701085258650">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701085258.png" class title="image-20210701085258650">
 
 <ul>
 <li><p>添加数据：</p>
@@ -382,7 +388,7 @@
 <p>  –》 1048 - Column ‘sname’ cannot be null <strong>不能为null</strong></p>
 <p>  –》 819 - Check constraint ‘t_student_chk_1’ is violated. <strong>违反检查约束</strong></p>
 <p>  – 》1062 - Duplicate（重复的） entry ‘1’ for key ‘t_student.PRIMARY’ <strong>主键重复</strong></p>
-<p>  – 》1062 - Duplicate entry ‘<a href="mailto:&#x6c;&#x73;&#x40;&#x31;&#50;&#54;&#x2e;&#99;&#111;&#x6d;">&#x6c;&#x73;&#x40;&#x31;&#50;&#54;&#x2e;&#99;&#111;&#x6d;</a>‘ for key ‘t_student.email’ <strong>违反唯一约束</strong></p>
+<p>  – 》1062 - Duplicate entry ‘<a href="mailto:&#x6c;&#115;&#64;&#49;&#x32;&#x36;&#46;&#99;&#111;&#109;">&#x6c;&#115;&#64;&#49;&#x32;&#x36;&#46;&#99;&#111;&#109;</a>‘ for key ‘t_student.email’ <strong>违反唯一约束</strong></p>
 <ul>
 <li>使用自增的时候用<strong>null和default</strong>都是可以</li>
 <li>如果sql报错，可能<strong>主键</strong>就浪费了，后续插入的主键是不连号的，主键也不要求连号的</li>
@@ -396,7 +402,7 @@
 <h4 id="创建表之后添加约束"><a href="#创建表之后添加约束" class="headerlink" title="- 创建表之后添加约束"></a>- 创建表之后添加约束</h4><h5 id="实例三"><a href="#实例三" class="headerlink" title="实例三"></a>实例三</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-- 删除表：</span><br><span class="line">drop table t_student;</span><br><span class="line">-- 创建数据库表：</span><br><span class="line">create table t_student(</span><br><span class="line">        sno int(6), </span><br><span class="line">        sname varchar(5) not null, </span><br><span class="line">        sex char(1) default &#x27;男&#x27;,</span><br><span class="line">        age int(3),</span><br><span class="line">        enterdate date,</span><br><span class="line">        classname varchar(10),</span><br><span class="line">        email varchar(15)</span><br><span class="line">);</span><br><span class="line">-- &gt; 1075 - Incorrect table definition; there can be only one auto column and it must be defined as a key</span><br><span class="line">-- 错误的解决办法：就是auto_increment去掉</span><br><span class="line">-- 在创建表以后添加约束：</span><br><span class="line">alter table t_student add constraint pk_stu primary key (sno) ; -- 主键约束</span><br><span class="line">alter table t_student modify sno int(6) auto_increment; -- 修改自增条件</span><br><span class="line">alter table t_student add constraint ck_stu_sex check (sex = &#x27;男&#x27; || sex = &#x27;女&#x27;);</span><br><span class="line">alter table t_student add constraint ck_stu_age check (age &gt;= 18 and age &lt;= 50);</span><br><span class="line">alter table t_student add constraint uq_stu_email unique (email);</span><br><span class="line">-- 查看表结构：</span><br><span class="line">desc t_student;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>验证约束添加成功：</p>
-<img src="/2022/05/07/MySQL/20210701105406.png" alt="image-20210701105405972" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210701105406.png" alt="image-20210701105405972" style="zoom:67%;">
 
 
 
@@ -437,15 +443,15 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 尝试删除班级</span><br><span class="line">delete from t_class where cno = 1;</span><br></pre></td></tr></table></figure>
 
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701111051.png" class title="image-20210701111051536"></li>
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701111051.png" class title="image-20210701111051536"></li>
 </ol>
 <h4 id="外键策略："><a href="#外键策略：" class="headerlink" title="外键策略："></a><strong>外键策略：</strong></h4><p>直接删除班级会错误，有时候必须删，可以加入外键策略</p>
 <h6 id="策略一：no-action-不允许操作"><a href="#策略一：no-action-不允许操作" class="headerlink" title="策略一：no action 不允许操作"></a>策略一：no action 不允许操作</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 策略1：no action 不允许操作</span><br><span class="line">-- 通过操作sql来完成：</span><br><span class="line">-- 先把班级2的学生对应的班级 改为null </span><br><span class="line">update t_student set classno = null where classno = 2;</span><br><span class="line">-- 然后再删除班级2   </span><br><span class="line">delete from t_class where cno = 2;</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<img src="/2022/05/07/MySQL/20210701112307.png" alt="image-20210701112307207" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210701112307.png" alt="image-20210701112307207" style="zoom:67%;">
 
-<img src="/2022/05/07/MySQL/20210701112344.png" alt="image-20210701112344539" style="zoom: 50%;">
+<img src="/2021/05/07/MySQL/20210701112344.png" alt="image-20210701112344539" style="zoom: 50%;">
 
 <h6 id="策略二：使用cascade级联操作"><a href="#策略二：使用cascade级联操作" class="headerlink" title="策略二：使用cascade级联操作"></a>策略二：使用cascade级联操作</h6><p>操作主表的时候影响从表的外键</p>
 <ul>
@@ -457,7 +463,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 试试更新：</span><br><span class="line">update t_class set cno = 5 where cno = 3;</span><br><span class="line">-- 试试删除：</span><br><span class="line">delete from t_class where cno = 5;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/20210701113031.png" alt="image-20210701113031631" style="zoom:50%;"></li>
+<img src="/2021/05/07/MySQL/20210701113031.png" alt="image-20210701113031631" style="zoom:50%;"></li>
 </ul>
 <h6 id="策略三：set-null-置空操作"><a href="#策略三：set-null-置空操作" class="headerlink" title="策略三：set null     置空操作"></a>策略三：set null     置空操作</h6><ul>
 <li><p>先删除之前的外键约束</p>
@@ -468,9 +474,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 更新</span><br><span class="line">update t_class set cno = 5 whwere con = 1;</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<img src="/2022/05/07/MySQL/20210701142452.png" alt="image-20210701142451962" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210701142452.png" alt="image-20210701142451962" style="zoom:67%;">
 
-<img src="/2022/05/07/MySQL/20210701142510.png" alt="image-20210701142510409" style="zoom: 50%;"></li>
+<img src="/2021/05/07/MySQL/20210701142510.png" alt="image-20210701142510409" style="zoom: 50%;"></li>
 </ul>
 <p>注：策略2 级联操作  和  策略2 的  删除操作  可以混着使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table t_student add constraint fk_stu_classno foreign key (classno) references t_class (cno) on update cascade on delete set null ;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -487,13 +493,13 @@
 
 <h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">-- DEPT</span><br><span class="line">insert into DEPT (DEPTNO, DNAME, LOC)  </span><br><span class="line">values (10, &#x27;ACCOUNTING&#x27;, &#x27;NEW YORK&#x27;);  </span><br><span class="line">insert into DEPT (DEPTNO, DNAME, LOC)  </span><br><span class="line">values (20, &#x27;RESEARCH&#x27;, &#x27;DALLAS&#x27;);  </span><br><span class="line">insert into DEPT (DEPTNO, DNAME, LOC)  </span><br><span class="line">values (30, &#x27;SALES&#x27;, &#x27;CHICAGO&#x27;);  </span><br><span class="line">insert into DEPT (DEPTNO, DNAME, LOC)  </span><br><span class="line">values (40, &#x27;OPERATIONS&#x27;, &#x27;BOSTON&#x27;);  </span><br><span class="line">-- EMP</span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7369, &#x27;SMITH&#x27;, &#x27;CLERK&#x27;, 7902, &#x27;1980-12-17&#x27;, 800, null, 20);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7499, &#x27;ALLEN&#x27;, &#x27;SALESMAN&#x27;, 7698, &#x27;1981-02-20&#x27;, 1600, 300, 30);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7521, &#x27;WARD&#x27;, &#x27;SALESMAN&#x27;, 7698, &#x27;1981-02-22&#x27;, 1250, 500, 30);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7566, &#x27;JONES&#x27;, &#x27;MANAGER&#x27;, 7839, &#x27;1981-04-02&#x27;, 2975, null, 20);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7654, &#x27;MARTIN&#x27;, &#x27;SALESMAN&#x27;, 7698, &#x27;1981-09-28&#x27;, 1250, 1400, 30);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7698, &#x27;BLAKE&#x27;, &#x27;MANAGER&#x27;, 7839, &#x27;1981-05-01&#x27;, 2850, null, 30);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7782, &#x27;CLARK&#x27;, &#x27;MANAGER&#x27;, 7839, &#x27;1981-06-09&#x27;, 2450, null, 10);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7788, &#x27;SCOTT&#x27;, &#x27;ANALYST&#x27;, 7566, &#x27;1987-04-19&#x27;, 3000, null, 20);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7839, &#x27;KING&#x27;, &#x27;PRESIDENT&#x27;, null, &#x27;1981-11-17&#x27;, 5000, null, 10);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7844, &#x27;TURNER&#x27;, &#x27;SALESMAN&#x27;, 7698, &#x27;1981-09-08&#x27;, 1500, 0, 30);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7876, &#x27;ADAMS&#x27;, &#x27;CLERK&#x27;, 7788, &#x27;1987-05-23&#x27;, 1100, null, 20);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7900, &#x27;JAMES&#x27;, &#x27;CLERK&#x27;, 7698, &#x27;1981-12-03&#x27;, 950, null, 30);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7902, &#x27;FORD&#x27;, &#x27;ANALYST&#x27;, 7566, &#x27;1981-12-03&#x27;, 3000, null, 20);  </span><br><span class="line">insert into EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)  </span><br><span class="line">values (7934, &#x27;MILLER&#x27;, &#x27;CLERK&#x27;, 7782, &#x27;1982-01-23&#x27;, 1300, null, 10);  </span><br><span class="line">-- SALGRADE</span><br><span class="line">insert into SALGRADE (GRADE, LOSAL, HISAL)  </span><br><span class="line">values (1, 700, 1200);  </span><br><span class="line">insert into SALGRADE (GRADE, LOSAL, HISAL)  </span><br><span class="line">values (2, 1201, 1400);  </span><br><span class="line">insert into SALGRADE (GRADE, LOSAL, HISAL)  </span><br><span class="line">values (3, 1401, 2000);  </span><br><span class="line">insert into SALGRADE (GRADE, LOSAL, HISAL)  </span><br><span class="line">values (4, 2001, 3000);  </span><br><span class="line">insert into SALGRADE (GRADE, LOSAL, HISAL)  </span><br><span class="line">values (5, 3001, 9999);  </span><br><span class="line"></span><br><span class="line">-- 查看表：</span><br><span class="line">select * from dept; </span><br><span class="line">-- 部门表：dept:department 部分 ，loc - location 位置</span><br><span class="line">select * from emp;</span><br><span class="line">-- 员工表：emp:employee 员工   ,mgr :manager上级领导编号，hiredate 入职日期  firedate 解雇日期 ，common：补助</span><br><span class="line">-- deptno 外键 参考  dept - deptno字段</span><br><span class="line">-- mgr 外键  参考  自身表emp - empno  产生了自关联</span><br><span class="line">select * from salgrade;</span><br><span class="line">-- losal - lowsal</span><br><span class="line">-- hisal - highsal</span><br><span class="line">select * from bonus;</span><br></pre></td></tr></table></figure>
 
-<h3 id="结果-表格形式"><a href="#结果-表格形式" class="headerlink" title="结果(表格形式)"></a>结果(表格形式)</h3><img src="/2022/05/07/MySQL/20210701143713.png" alt="image-20210701143713377" style="zoom:67%;">
+<h3 id="结果-表格形式"><a href="#结果-表格形式" class="headerlink" title="结果(表格形式)"></a>结果(表格形式)</h3><img src="/2021/05/07/MySQL/20210701143713.png" alt="image-20210701143713377" style="zoom:67%;">
 
-<img src="/2022/05/07/MySQL/20210701143726.png" alt="image-20210701143726512" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210701143726.png" alt="image-20210701143726512" style="zoom:67%;">
 
-<img src="/2022/05/07/MySQL/20210701143737.png" alt="image-20210701143737874" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210701143737.png" alt="image-20210701143737874" style="zoom:67%;">
 
-<img src="/2022/05/07/MySQL/20210701143749.png" alt="image-20210701143749663" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210701143749.png" alt="image-20210701143749663" style="zoom:67%;">
 
 <h2 id="2-单表查询"><a href="#2-单表查询" class="headerlink" title="2.  单表查询"></a>2.  单表查询</h2><h3 id="2-1-简单的SQL查询"><a href="#2-1-简单的SQL查询" class="headerlink" title="2.1 简单的SQL查询"></a>2.1 简单的SQL查询</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">-- 对emp表查询：</span><br><span class="line">select * from emp; -- *代表所有数据</span><br><span class="line">-- 显示部分列：</span><br><span class="line">select empno,ename,sal from emp;</span><br><span class="line">-- 显示部分行：where子句</span><br><span class="line">select * from emp where sal &gt; 2000;</span><br><span class="line">-- 显示部分列，部分行：</span><br><span class="line">select empno,ename,job,mgr from emp where sal &gt; 2000;</span><br><span class="line">-- 起别名：</span><br><span class="line">select empno 员工编号,ename 姓名,sal 工资 from emp; -- as 省略，&#x27;&#x27;或者&quot;&quot;省略了</span><br><span class="line">-- as alias 别名</span><br><span class="line">select empno as 员工编号,ename as 姓名,sal as 工资 from emp;</span><br><span class="line">select empno as &#x27;员工编号&#x27;,ename as &quot;姓名&quot;,sal as 工资 from emp;</span><br><span class="line">-- &gt; 1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#x27;编号,ename as &quot;姓 名&quot;,sal as 工资 from emp&#x27; at line 1</span><br><span class="line">-- 错误原因：在别名中有特殊符号的时候，&#x27;&#x27;或者&quot;&quot;不可以省略不写</span><br><span class="line">select empno as 员工 编号,ename as &quot;姓 名&quot;,sal as 工资 from emp;</span><br><span class="line">-- 算术运算符：</span><br><span class="line">select empno,ename,sal,sal+1000 as &#x27;涨薪后&#x27;,deptno from emp where sal &lt; 2500;</span><br><span class="line">select empno,ename,sal,comm,sal+comm from emp;  -- ？？？后面再说</span><br><span class="line">-- 去重操作：</span><br><span class="line">select job from emp;</span><br><span class="line">select distinct job from emp;</span><br><span class="line">select job,deptno from emp;</span><br><span class="line">select distinct job,deptno from emp; -- 对后面的所有列组合 去重 ，而不是单独的某一列去重</span><br><span class="line">-- 排序：</span><br><span class="line">select * from emp order by sal; -- 默认情况下是按照升序排列的</span><br><span class="line">select * from emp order by sal asc; -- asc 升序，可以默认不写</span><br><span class="line">select * from emp order by sal desc; -- desc 降序</span><br><span class="line">select * from emp order by sal asc ,deptno desc; -- 在工资升序的情况下，deptno按照降序排列</span><br></pre></td></tr></table></figure>
 
@@ -588,7 +594,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-- 1.字符串函数</span><br><span class="line">select ename,length(ename),substring(ename,2,3) from emp;</span><br><span class="line">-- substring字符串截取，2:从字符下标为2开始，3：截取长度3    （下标从1开始）</span><br></pre></td></tr></table></figure>
 
 <p>显示结果：</p>
-<img src="/2022/05/07/MySQL/20210630210116.png" alt="image-20210630210115889" style="zoom:50%;">
+<img src="/2021/05/07/MySQL/20210630210116.png" alt="image-20210630210115889" style="zoom:50%;">
 
 
 
@@ -639,7 +645,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 2.数值函数</span><br><span class="line">select abs(-5),ceil(5.3),floor(5.9),round(3.14) from dual; -- dual实际就是一个伪表</span><br><span class="line">select abs(-5) 绝对值,ceil(5.3) 向上取整,floor(5.9) 向下取整,round(3.14) 四舍五入;  </span><br><span class="line">-- 如果没有where条件的话，from dual可以省略不写</span><br><span class="line">select ceil(sal) from emp;</span><br><span class="line">select 10/3,10%3,mod(10,3) ;</span><br></pre></td></tr></table></figure>
 
 <p>显示结果：</p>
-<img src="/2022/05/07/MySQL/20210630210456.png" alt="image-20210630210456370" style="zoom:50%;">
+<img src="/2021/05/07/MySQL/20210630210456.png" alt="image-20210630210456370" style="zoom:50%;">
 
 
 
@@ -695,30 +701,30 @@
 
 
 
-<img src="/2022/05/07/MySQL/20210630223758.png" alt="image-20210630223758495" style="zoom:50%;">
+<img src="/2021/05/07/MySQL/20210630223758.png" alt="image-20210630223758495" style="zoom:50%;">
 
-<img src="/2022/05/07/MySQL/20210630223819.png" alt="image-20210630223819827" style="zoom:50%;">
+<img src="/2021/05/07/MySQL/20210630223819.png" alt="image-20210630223819827" style="zoom:50%;">
 
-<img src="/2022/05/07/MySQL/20210630223829.png" alt="image-20210630223829883" style="zoom:50%;">
+<img src="/2021/05/07/MySQL/20210630223829.png" alt="image-20210630223829883" style="zoom:50%;">
 
-<h5 id="4-流程函数"><a href="#4-流程函数" class="headerlink" title="4. 流程函数"></a>4. 流程函数</h5><img src="/2022/05/07/MySQL/20210630224323.png" alt="image-20210630224323874" style="zoom:67%;">
+<h5 id="4-流程函数"><a href="#4-流程函数" class="headerlink" title="4. 流程函数"></a>4. 流程函数</h5><img src="/2021/05/07/MySQL/20210630224323.png" alt="image-20210630224323874" style="zoom:67%;">
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">-- 4.流程函数</span><br><span class="line">-- if相关</span><br><span class="line">select empno,ename,sal,if(sal&gt;=2500,&#x27;高薪&#x27;,&#x27;底薪&#x27;) as &#x27;薪资等级&#x27; from emp; -- if-else 双分支结构</span><br><span class="line">select empno,ename,sal,comm,sal+ifnull(comm,0) from emp; -- 如果comm是null，那么取值为0 -- 单分支</span><br><span class="line">select nullif(1,1),nullif(1,2) from dual; --  如果value1等于value2，则返回null，否则返回value1  </span><br><span class="line">-- case相关：</span><br><span class="line">-- case等值判断</span><br><span class="line">select empno,ename,job,</span><br><span class="line">case job </span><br><span class="line"> when &#x27;CLERK&#x27; then &#x27;店员&#x27;</span><br><span class="line"> when &#x27;SALESMAN&#x27;  then &#x27;销售&#x27;</span><br><span class="line"> when &#x27;MANAGER&#x27; then &#x27;经理&#x27;</span><br><span class="line"> else &#x27;其他&#x27;</span><br><span class="line">end &#x27;岗位&#x27;,</span><br><span class="line">sal from emp;</span><br><span class="line">-- case区间判断:</span><br><span class="line">select empno,ename,sal,</span><br><span class="line">case </span><br><span class="line"> when sal&lt;=1000 then &#x27;A&#x27;</span><br><span class="line"> when sal&lt;=2000 then &#x27;B&#x27;</span><br><span class="line"> when sal&lt;=3000 then &#x27;C&#x27;</span><br><span class="line"> else &#x27;D&#x27;</span><br><span class="line">end &#x27;工资等级&#x27;,</span><br><span class="line">deptno from emp;</span><br><span class="line">from emp;</span><br></pre></td></tr></table></figure>
 
 
 
-<h5 id="5-JSON函数"><a href="#5-JSON函数" class="headerlink" title="5. JSON函数"></a>5. JSON函数</h5><img src="/2022/05/07/MySQL/20210630224430.png" alt="image-20210630224430595" style="zoom:67%;">
+<h5 id="5-JSON函数"><a href="#5-JSON函数" class="headerlink" title="5. JSON函数"></a>5. JSON函数</h5><img src="/2021/05/07/MySQL/20210630224430.png" alt="image-20210630224430595" style="zoom:67%;">
 
 
 
-<h5 id="6-其他函数"><a href="#6-其他函数" class="headerlink" title="6. 其他函数"></a>6. 其他函数</h5><img src="/2022/05/07/MySQL/20210630224453.png" alt="image-20210630224453894" style="zoom:67%;">
+<h5 id="6-其他函数"><a href="#6-其他函数" class="headerlink" title="6. 其他函数"></a>6. 其他函数</h5><img src="/2021/05/07/MySQL/20210630224453.png" alt="image-20210630224453894" style="zoom:67%;">
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> -- 6.其他函数</span><br><span class="line">select database(),user(),version() from dual;</span><br></pre></td></tr></table></figure>
 
 
 
 <h4 id="多行函数"><a href="#多行函数" class="headerlink" title="- 多行函数"></a>- 多行函数</h4><p>对一组数据进行运算，针对一组数据（多行记录）只返回一个结果，也称<strong>分组函数</strong></p>
-<img src="/2022/05/07/MySQL/20210630224611.png" alt="image-20210630224611608" style="zoom: 67%;">
+<img src="/2021/05/07/MySQL/20210630224611.png" alt="image-20210630224611608" style="zoom: 67%;">
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-- 多行函数：</span><br><span class="line">select max(sal),min(sal),count(sal),sum(sal),sum(sal)/count(sal),avg(sal) from emp;</span><br><span class="line">select * from emp;</span><br><span class="line">-- 多行函数自动忽略null值</span><br><span class="line">select max(comm),min(comm),count(comm),sum(comm),sum(comm)/count(comm),avg(comm) from emp;</span><br><span class="line">-- max(),min(),count()针对所有类型   sum(),avg() 只针对数值型类型有效</span><br><span class="line">select max(ename),min(ename),count(ename),sum(ename),avg(ename) from emp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- count --计数   </span><br><span class="line">-- 统计表的记录数：方式1：</span><br><span class="line">select * from emp;</span><br><span class="line">select count(ename) from emp;</span><br><span class="line">select count(*) from emp;</span><br><span class="line">-- 统计表的记录数：方式2</span><br><span class="line">select 1 from dual;</span><br><span class="line">select 1 from emp;</span><br><span class="line">select count(1) from emp;</span><br></pre></td></tr></table></figure>
 
@@ -775,25 +781,25 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * </span><br><span class="line">from emp</span><br><span class="line">left outer join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701170246.png" class title="image-20210701170246009">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701170246.png" class title="image-20210701170246009">
 
 <h5 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h5><p>右边的那个表的信息，即使不匹配也可以查看出结果</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701163643.png" class title="image-20210701163643122">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701163643.png" class title="image-20210701163643122">
 
 <h5 id="全外连接"><a href="#全外连接" class="headerlink" title="全外连接"></a>全外连接</h5><p>这个语法在mysql里面不支持，oracle才支持</p>
 <p>为了代替 可以取左外连接和右外连接的并集</p>
 <h6 id="并集-union"><a href="#并集-union" class="headerlink" title="并集 union"></a>并集 union</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select * </span><br><span class="line">from emp</span><br><span class="line">left outer join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br><span class="line">union -- 并集，不去重，效率低</span><br><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701170831.png" class title="image-20210701170831388">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701170831.png" class title="image-20210701170831388">
 
 <h6 id="union-all"><a href="#union-all" class="headerlink" title="union all"></a>union all</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select * </span><br><span class="line">from emp</span><br><span class="line">left outer join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br><span class="line">union  all -- 不去重的并集， 效率高</span><br><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701171121.png" class title="image-20210701171121236">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701171121.png" class title="image-20210701171121236">
 
 
 
@@ -801,7 +807,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select * from emp;</span><br><span class="line">select * from dept;</span><br><span class="line">select * from salgrade；</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br><span class="line">-- 可以看做就是上面的结果是一张表，然后再和第三张表进行连接</span><br><span class="line">inner join salgrade s</span><br><span class="line">on e.sal between salgrade</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210701184545.png" class title="image-20210701184545238">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210701184545.png" class title="image-20210701184545238">
 
 
 
@@ -809,7 +815,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 查询员工的编号、姓名、上级编号,上级的姓名</span><br><span class="line">select * from emp;</span><br><span class="line">select e1.empno 员工编号,e1.ename 员工姓名,e1.mgr 领导编号,e2.ename 员工领导姓名</span><br><span class="line">from emp e1</span><br><span class="line">inner join emp e2</span><br><span class="line">on e1.mgr = e2.empno;</span><br><span class="line">-- 左外连接：</span><br><span class="line">select e1.empno 员工编号,e1.ename 员工姓名,e1.mgr 领导编号,e2.ename 员工领导姓名</span><br><span class="line">from emp e1</span><br><span class="line">left outer join emp e2</span><br><span class="line">on e1.mgr = e2.empno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2022/05/07/MySQL/20210702094750.png" alt="image-20210702094750390" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210702094750.png" alt="image-20210702094750390" style="zoom:67%;">
 
 <h3 id="补充：92语法的多表查询"><a href="#补充：92语法的多表查询" class="headerlink" title="补充：92语法的多表查询"></a>补充：92语法的多表查询</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">-- 查询员工的编号，员工姓名，薪水，员工部门编号，部门名称：</span><br><span class="line">select e.empno,e.ename,e.sal,e.deptno,d.dname</span><br><span class="line">from emp e,dept d</span><br><span class="line">-- 相当于99语法中的cross join ,出现笛卡尔积，没有意义</span><br><span class="line">select e.empno,e.ename,e.sal,e.deptno,d.dname</span><br><span class="line">from emp e,dept d</span><br><span class="line">where e.deptno = d.deptno;</span><br><span class="line">-- 相当于99语法中的natural join </span><br><span class="line">-- 查询员工的编号，员工姓名，薪水，员工部门编号，部门名称，查询出工资大于2000的员工</span><br><span class="line">select e.empno,e.ename,e.sal,e.deptno,d.dname</span><br><span class="line">from emp e,dept d</span><br><span class="line">where e.deptno = d.deptno and e.sal &gt; 2000;</span><br><span class="line">-- 查询员工的名字，岗位，上级编号，上级名称（自连接）：</span><br><span class="line">select e1.ename,e1.job,e1.mgr ,e2.ename </span><br><span class="line">from emp e1,emp e2</span><br><span class="line">where e1.mgr = e2.empno;</span><br><span class="line">-- 查询员工的编号、姓名、薪水、部门编号、部门名称、薪水等级</span><br><span class="line">select e.empno,e.ename,e.sal,e.deptno,d.dname,s.grade </span><br><span class="line">from emp e,dept d,salgrade s</span><br><span class="line">where e.deptno = d.deptno and e.sal &gt;= s.losal and e.sal &lt;= s.hisal;</span><br><span class="line">-- 总结：</span><br><span class="line">-- 1.92语法麻烦 </span><br><span class="line">-- 2.92语法中 表的连接条件 和  筛选条件  是放在一起的没有分开</span><br><span class="line">-- 3.99语法中提供了更多的查询连接类型：cross,natural,inner,outer </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -888,7 +894,7 @@
 <h1 id="数据库对象"><a href="#数据库对象" class="headerlink" title="数据库对象"></a>数据库对象</h1><h2 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h2><p><strong>事务（Transaction）</strong>是用来维护数据库完整性的，它能够保证一系列的MySQL操作要么全部执行，要么全不执行。</p>
 <p>eg1.<br>转账操作：A账户要转账给B账户，那么A账户上减少的钱数和B账户上增加的钱数必须一致，也就是说A账户的转出操作和B账户的转入操作要么全部执行，要么全不执行；如果其中一个操作出现异常而没有执行的话，就会导致账户A和账户B的转入转出金额不一致的情况，为而事实上这种情况是不允许发生的，所以为了防止这种情况的发生，需要使用事务处理。<br>eg2.<br>在淘宝购物下订单的时候，商家库存要减少，订单增加记录，付款我的账号少100元…操作要么全部执行，要么全不执行</p>
 <h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>事务（Transaction）指的是一个操作序列，该操作序列中的多个操作要么都做，要么都不做，是一个不可分割的工作单位，是数据库环境中的逻辑工作单位，由DBMS（数据库管理系统）中的事务管理子系统负责事务的处理。<br>目前常用的存储引擎有InnoDB（MySQL5.5以后默认的存储引擎）和MyISAM（MySQL5.5之前默认的存储引擎），其中InnoDB支持事务处理机制，而MyISAM不支持。</p>
-<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><img src="/2022/05/07/MySQL/20210703110321.png" alt="image-20210703110320474" style="zoom: 50%;">
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><img src="/2021/05/07/MySQL/20210703110321.png" alt="image-20210703110320474" style="zoom: 50%;">
 
 <p>事务处理可以确保除非事务性序列内的所有操作都成功完成，否则不会永久更新面向数据的资源。通过将一组相关操作组合为一个要么全部成功要么全部失败的序列，可以简化错误恢复并使应用程序更加可靠。<br>但并不是所有的操作序列都可以称为事务，这是因为一个操作序列要成为事务，必须满足事务的原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）。这四个特性简称为<strong>ACID特性。</strong></p>
 <ol>
@@ -907,13 +913,13 @@
 
 <p>在<strong>回滚和提交</strong>之前，数据库中的数据都是操作的缓存中的数据，而不是数据库的真实数据</p>
 <h3 id="事务并发问题"><a href="#事务并发问题" class="headerlink" title="事务并发问题"></a>事务并发问题</h3><h5 id="脏读（Dirty-read）"><a href="#脏读（Dirty-read）" class="headerlink" title="脏读（Dirty read）"></a>脏读（Dirty read）</h5><p>当一个事务正在访问数据并且对数据进行了修改，而这种修改还没有提交到数据库中，这时另外一个事务也访问了这个数据，然后使用了这个数据。因为这个数据是还没有提交的数据，那么另外一个事务读到的这个数据是“脏数据”，依据“脏数据”所做的操作可能是不正确的。</p>
-<img src="/2022/05/07/MySQL/20210703111005.png" alt="image-20210703111005503" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210703111005.png" alt="image-20210703111005503" style="zoom:67%;">
 
 <h5 id="不可重复读-（Unrepeatableread）"><a href="#不可重复读-（Unrepeatableread）" class="headerlink" title="不可重复读 （Unrepeatableread）"></a>不可重复读 （Unrepeatableread）</h5><p>指在一个事务内多次读同一数据。在这个事务还没有结束时，另一个事务也访问该数据。那么，在第一个事务中的两次读数据之间，由于第二个事务的修改导致第一个事务两次读取的数据可能不太一样。这就发生了在一个事务内两次读到的数据是不一样的情况，因此称为不可重复读。</p>
-<img src="/2022/05/07/MySQL/20210703111018.png" alt="image-20210703111018492" style="zoom:67%;">
+<img src="/2021/05/07/MySQL/20210703111018.png" alt="image-20210703111018492" style="zoom:67%;">
 
 <h5 id="幻读-（Phantom-read）"><a href="#幻读-（Phantom-read）" class="headerlink" title="幻读 （Phantom read）"></a>幻读 （Phantom read）</h5><p>幻读与不可重复读类似。它发生在一个事务（T1）读取了几行数据，接着另一个并发事务（T2）插入了一些数据时。在随后的查询中，第一个事务（T1）就会发现多了一些原本不存在的记录，就好像发生了幻觉一样，所以称为幻读。</p>
- <img src="/2022/05/07/MySQL/20210703111036.png" alt="image-20210703111036154" style="zoom:67%;">
+ <img src="/2021/05/07/MySQL/20210703111036.png" alt="image-20210703111036154" style="zoom:67%;">
 
 <p><strong>不可重复度和幻读区别：</strong> </p>
 <p>不可重复读的重点是修改，幻读的重点在于新增或者删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表 。</p>
@@ -921,7 +927,7 @@
 <p>例2（同样的条件, 第1次和第2次读出来的记录数不一样 ）：假某工资单表中工资大于3000的有4人，事务1读取了所有工资大于3000的人，共查到4条记录，这时事务2 又插入了一条工资大于3000的记录，事务1再次读取时查到的记录就变为了5条，这样就导致了幻读 </p>
 <h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><p>​    事务的隔离级别用于决定如何控制并发用户读写数据的操作。数据库是允许多用户并发访问的，如果多个用户同时开启事务并对同一数据进行读写操作的话，有可能会出现脏读、不可重复读和幻读问题，所以MySQL中提供了四种隔离级别来解决上述问题。</p>
 <p>​    从低到高依次为<strong>READ UNCOMMITTED、READ COMMITTED、REPEATABLE READ以及SERIALIZABLE</strong>，隔离级别越低，越能支持高并发的数据库操作。      </p>
-<img src="/2022/05/07/MySQL/20210703142738.png" alt="image-20210703142738514" style="zoom:67%;">                        
+<img src="/2021/05/07/MySQL/20210703142738.png" alt="image-20210703142738514" style="zoom:67%;">                        
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- 查看默认的事务隔离级别  MySQL默认的是repeatable read  </span><br><span class="line">select @@transaction_isolation;  </span><br><span class="line">-- 设置事务的隔离级别   （设置当前会话的隔离级别）</span><br><span class="line">set session transaction isolation level read uncommitted;  </span><br><span class="line">set session transaction isolation level read committed;  </span><br><span class="line">set session transaction isolation level repeatable read;  -- 默认的</span><br><span class="line">set session transaction isolation level serializable;  </span><br><span class="line">start transaction ;</span><br><span class="line">select * from account where id = 1;</span><br></pre></td></tr></table></figure>
 
@@ -931,18 +937,18 @@
 <ul>
 <li>事务一</li>
 </ul>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210703152258.png" class title="image-20210703145526739">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152258.png" class title="image-20210703145526739">
 
 <ul>
 <li>事务二</li>
 </ul>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210703152314.png" class title="image-20210703145443742"></li>
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152314.png" class title="image-20210703145443742"></li>
 <li><p>事务一查询操作：</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210703152514.png" class title="image-20210703152514123"></li>
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152514.png" class title="image-20210703152514123"></li>
 <li><p>事务二更新操作，且没提交</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210703152552.png" class title="image-20210703152552191"></li>
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152552.png" class title="image-20210703152552191"></li>
 <li><p>事务一再次查询：</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210703152939.png" class title="image-20210703152939898">
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152939.png" class title="image-20210703152939898">
 
 <p>读到了在脏数据</p>
 </li>
@@ -965,18 +971,18 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 在视图中插入数据：</span><br><span class="line">insert into myview01 (empno,ename,job,deptno) values (9999,&#x27;lili&#x27;,&#x27;CLERK&#x27;,20);</span><br></pre></td></tr></table></figure>
 
 <p>查看视图：</p>
-<img src="/2022/05/07/MySQL/20210703161609.png" alt="image-20210703161609044" style="zoom:67%;"></li>
+<img src="/2021/05/07/MySQL/20210703161609.png" alt="image-20210703161609044" style="zoom:67%;"></li>
 <li><p>向视图中插入不满足条件的数据</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into myview01 (empno,ename,job,deptno) values (8888,&#x27;nana&#x27;,&#x27;CLERK&#x27;,30);</span><br></pre></td></tr></table></figure>
 
 <p>查看原来的表，发现成功插进去了</p>
-<img src="/2022/05/07/MySQL/20210703161731.png" alt="image-20210703161731377" style="zoom:67%;"></li>
+<img src="/2021/05/07/MySQL/20210703161731.png" alt="image-20210703161731377" style="zoom:67%;"></li>
 <li><p>解决上面问题：</p>
 <p>需要加上<strong>check option</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 创建/替换单表视图：</span><br><span class="line">create or replace view myview01</span><br><span class="line">as</span><br><span class="line">select empno,ename,job,deptno </span><br><span class="line">from emp</span><br><span class="line">where deptno = 20</span><br><span class="line">with check option;</span><br></pre></td></tr></table></figure>
 
 <p>这样不满足条件的数据就不会轻易被加进去：</p>
-<img src="/2022/05/07/MySQL/20210703162005.png" alt="image-20210703162005163" style="zoom:67%;"></li>
+<img src="/2021/05/07/MySQL/20210703162005.png" alt="image-20210703162005163" style="zoom:67%;"></li>
 </ul>
 <h4 id="实例二：多表视图"><a href="#实例二：多表视图" class="headerlink" title="实例二：多表视图"></a>实例二：多表视图</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- 创建/替换多表视图：</span><br><span class="line">create or replace view myview02</span><br><span class="line">as </span><br><span class="line">select e.empno,e.ename,e.sal,d.deptno,d.dname</span><br><span class="line">from emp e</span><br><span class="line">join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br><span class="line">where sal &gt; 2000 ;</span><br><span class="line">select * from myview02;</span><br></pre></td></tr></table></figure>
 
@@ -1006,12 +1012,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-- 定义一个没有返回值 存储过程</span><br><span class="line">-- 实现：模糊查询操作：</span><br><span class="line">select * from emp where ename like &#x27;%A%&#x27;;</span><br><span class="line">create procedure mypro01(name varchar(10))</span><br><span class="line">begin</span><br><span class="line">        if name is null or name = &quot;&quot; then</span><br><span class="line">                select * from emp; -- 传入null，就查看全表</span><br><span class="line">        else</span><br><span class="line">    select * from emp where ename like concat(&#x27;%&#x27;,name,&#x27;%&#x27;); </span><br><span class="line">        end if;	</span><br><span class="line">end;</span><br><span class="line">-- 删除存储过程：</span><br><span class="line">drop procedure mypro01;</span><br><span class="line">-- 调用存储过程：</span><br><span class="line">call mypro01(null);</span><br><span class="line">call mypro01(&#x27;R&#x27;);</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<img src="/2022/05/07/MySQL/20210703171452.png" alt="image-20210703171452630" style="zoom: 50%;"></li>
+<img src="/2021/05/07/MySQL/20210703171452.png" alt="image-20210703171452630" style="zoom: 50%;"></li>
 <li><p>定义一个有返回值的存储过程</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-- 定义一个有返回值的存储过程</span><br><span class="line">-- in 参数前面的in可以不写</span><br><span class="line">-- out </span><br><span class="line">-- found_rows() 是mysql定义的一个函数，作用返回查询结果的条数</span><br><span class="line">-- into </span><br><span class="line">create procedure mypro02 (in name varchar(10),out num int(4))</span><br><span class="line">begin </span><br><span class="line">		if name is null or name = &quot;&quot; then</span><br><span class="line">				select * from emp;</span><br><span class="line">		else </span><br><span class="line">				select * from emp where name like concat(&#x27;%&#x27;,name,&#x27;%&#x27;);</span><br><span class="line">		end if;</span><br><span class="line">		select found_rows() into num;</span><br><span class="line">end;</span><br><span class="line">-- 调用存储过程</span><br><span class="line">call mypro02(null,@num);</span><br><span class="line">select @num;</span><br><span class="line">call mypro02(&#x27;A&#x27;,@aaa); -- 传入的参数名不一定要一样</span><br><span class="line">select @aaa;</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<img src="/2022/05/07/MySQL/05/07/MySQL/20210703191518.png" class title="image-20210703191518417"></li>
+<img src="/2021/05/07/MySQL/05/07/MySQL/20210703191518.png" class title="image-20210703191518417"></li>
 </ul>
 
     </div>
@@ -1029,11 +1035,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/05/06/git/" rel="prev" title="git">
-                  <i class="fa fa-chevron-left"></i> git
-                </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/" rel="next" title="Linux学习">
+                  Linux学习 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
