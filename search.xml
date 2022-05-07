@@ -76,6 +76,39 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux学习</title>
+    <url>/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><ul>
+<li>启动网卡（仅针对单次可用）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">nmcli c up ens33</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改配置文件（永久可用）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/sysconfig/network-scripts/ifcfg-ens33</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png" alt="image-20210810165233126" style="zoom:33%;">
+
+<p>ONBOOT=yes</p>
+<p>NAT模式</p>
+<p>在VMWare中默认使用的NAT模式</p>
+<ul>
+<li>Network Address Translation 网络地址转换，</li>
+</ul>
+<p>为什么要求改网络类型：因为给NAT模式外界不能访问windows里面的操作系统</p>
+<p>改成桥接模式</p>
+<img src="/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png" alt="image-20210810165902006" style="zoom: 33%;">
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git</title>
     <url>/2022/05/06/git/</url>
     <content><![CDATA[<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>Git是一个免费的、开源的分布式版本控制系统，可以快速高效地处理从小型到大型的项目。</p>
@@ -329,39 +362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux学习</title>
-    <url>/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><ul>
-<li>启动网卡（仅针对单次可用）</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">nmcli c up ens33</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改配置文件（永久可用）</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/sysconfig/network-scripts/ifcfg-ens33</span></span><br></pre></td></tr></table></figure>
-
-<img src="/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png" alt="image-20210810165233126" style="zoom:33%;">
-
-<p>ONBOOT=yes</p>
-<p>NAT模式</p>
-<p>在VMWare中默认使用的NAT模式</p>
-<ul>
-<li>Network Address Translation 网络地址转换，</li>
-</ul>
-<p>为什么要求改网络类型：因为给NAT模式外界不能访问windows里面的操作系统</p>
-<p>改成桥接模式</p>
-<img src="/2021/07/16/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png" alt="image-20210810165902006" style="zoom: 33%;">
-
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL</title>
     <url>/2021/05/07/MySQL/</url>
     <content><![CDATA[<h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><h2 id="1-数据库基本概念"><a href="#1-数据库基本概念" class="headerlink" title="1.数据库基本概念"></a>1.数据库基本概念</h2><h3 id="1-1-数据"><a href="#1-1-数据" class="headerlink" title="1.1 数据"></a>1.1 数据</h3><p>所谓数据（Data）是指对客观事物进行描述并可以鉴别的符号，这些符号是可识别的、抽象的。它不仅仅指狭义上的数字，而是有多种表现形式：字母、文字、文本、图形、音频、视频等。现在计算机存储和处理的数据范围十分广泛，而描述这些数据的符号也变得越来越复杂了。</p>
@@ -373,7 +373,7 @@
 <h3 id="1-5-数据库管理员"><a href="#1-5-数据库管理员" class="headerlink" title="1.5 数据库管理员"></a>1.5 数据库管理员</h3><p>数据库管理员（Database Administrator，DBA）是指对数据库管理系统进行操作的人员，其主要负责数据库的运营和维护。</p>
 <h3 id="1-6-最终用户"><a href="#1-6-最终用户" class="headerlink" title="1.6 最终用户"></a>1.6 最终用户</h3><p>最终用户（User）指的是数据库应用程序的使用者。用户面向的是数据库应用程序（通过应用程序操作数据），并不会直接与数据库打交道。</p>
 <h3 id="1-7-数据库系统"><a href="#1-7-数据库系统" class="headerlink" title="1.7 数据库系统"></a>1.7 数据库系统</h3><p>数据库系统（Database System，DBS）一般是由数据库、数据库管理系统、数据库应用程序、数据库管理员和最终用户构成。其中DBMS是数据库系统的基础和核心</p>
-<h2 id="2-数据库表列类型"><a href="#2-数据库表列类型" class="headerlink" title="2. 数据库表列类型"></a>2. 数据库表列类型</h2><h3 id="2-1-整数类型"><a href="#2-1-整数类型" class="headerlink" title="2.1 整数类型"></a>2.1 整数类型</h3><img src="/2021/05/07/MySQL/05/07/MySQL/20210630201735.png" class title="image-20210630201735014">
+<h2 id="2-数据库表列类型"><a href="#2-数据库表列类型" class="headerlink" title="2. 数据库表列类型"></a>2. 数据库表列类型</h2><h3 id="2-1-整数类型"><a href="#2-1-整数类型" class="headerlink" title="2.1 整数类型"></a>2.1 整数类型</h3><img src="/2021/05/07/MySQL/20210630201735.png" alt="image-20210630201735014" style="zoom:67%;">
 
 <ol>
 <li><p>MySQL支持选择在该类型关键字后面的括号内指定整数值的<strong>显示宽度</strong>(例如，INT(4))。显示宽度并不限制可以在列内保存的值的范围，也不限制超过列的指定宽度的值的显示</p>
@@ -383,7 +383,7 @@
 <li><p>支持选择在该类型关键字后面的括号内指定整数值的显示宽度</p>
 </li>
 </ol>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210630201859.png" class title="image-20210630201859642">
+<img src="/2021/05/07/MySQL/20210630201859.png" alt="image-20210630201859642" style="zoom:67%;">
 
 
 
@@ -431,7 +431,7 @@
 
 
 
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701085258.png" class title="image-20210701085258650">
+<img src="/2021/05/07/MySQL/20210701085258.png" alt="image-20210701085258650" style="zoom:67%;">
 
 <ul>
 <li><p>添加数据：</p>
@@ -441,7 +441,7 @@
 <p>  –》 1048 - Column ‘sname’ cannot be null <strong>不能为null</strong></p>
 <p>  –》 819 - Check constraint ‘t_student_chk_1’ is violated. <strong>违反检查约束</strong></p>
 <p>  – 》1062 - Duplicate（重复的） entry ‘1’ for key ‘t_student.PRIMARY’ <strong>主键重复</strong></p>
-<p>  – 》1062 - Duplicate entry ‘<a href="mailto:&#x6c;&#115;&#64;&#49;&#x32;&#x36;&#46;&#99;&#111;&#109;">&#x6c;&#115;&#64;&#49;&#x32;&#x36;&#46;&#99;&#111;&#109;</a>‘ for key ‘t_student.email’ <strong>违反唯一约束</strong></p>
+<p>  – 》1062 - Duplicate entry ‘<a href="mailto:&#x6c;&#x73;&#x40;&#49;&#50;&#x36;&#x2e;&#x63;&#111;&#109;">&#x6c;&#x73;&#x40;&#49;&#50;&#x36;&#x2e;&#x63;&#111;&#109;</a>‘ for key ‘t_student.email’ <strong>违反唯一约束</strong></p>
 <ul>
 <li>使用自增的时候用<strong>null和default</strong>都是可以</li>
 <li>如果sql报错，可能<strong>主键</strong>就浪费了，后续插入的主键是不连号的，主键也不要求连号的</li>
@@ -488,15 +488,17 @@
 </li>
 <li><p>添加数据：</p>
 </li>
-<li><p>```mysql<br>– 可以一次性添加多条记录：<br>insert into t_class values (null,’java001’,’r803’),(null,’java002’,’r416’),(null,’大数据001’,’r103’);<br>insert into t_student values (null,’张三’,1),(null,’李四’,1),(null,’王五’,2),(null,’朱六’,3);</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">6. 查询班级表：</span><br><span class="line"></span><br><span class="line">   ```mysql</span><br><span class="line">   -- 查看班级表和学生表：</span><br><span class="line">   select * from t_class;</span><br><span class="line">   select * from t_student;</span><br></pre></td></tr></table></figure></li>
+<li><p>可以一次性添加多条记录：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 可以一次性添加多条记录：</span><br><span class="line">insert into t_class values (null,&#x27;java001&#x27;,&#x27;r803&#x27;),(null,&#x27;java002&#x27;,&#x27;r416&#x27;),(null,&#x27;大数据001&#x27;,&#x27;r103&#x27;);</span><br><span class="line">insert into t_student values (null,&#x27;张三&#x27;,1),(null,&#x27;李四&#x27;,1),(null,&#x27;王五&#x27;,2),(null,&#x27;朱六&#x27;,3);</span><br></pre></td></tr></table></figure></li>
+<li><p>查询班级表：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查看班级表和学生表：</span><br><span class="line">select * from t_class;</span><br><span class="line">select * from t_student;</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>添加外键的效果</strong>：</p>
 <ul>
 <li>删除班级会出错</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 尝试删除班级</span><br><span class="line">delete from t_class where cno = 1;</span><br></pre></td></tr></table></figure>
 
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701111051.png" class title="image-20210701111051536"></li>
+<img src="/2021/05/07/MySQL/20210701111051.png" alt="image-20210701111051536" style="zoom:67%;"></li>
 </ol>
 <h4 id="外键策略："><a href="#外键策略：" class="headerlink" title="外键策略："></a><strong>外键策略：</strong></h4><p>直接删除班级会错误，有时候必须删，可以加入外键策略</p>
 <h6 id="策略一：no-action-不允许操作"><a href="#策略一：no-action-不允许操作" class="headerlink" title="策略一：no action 不允许操作"></a>策略一：no action 不允许操作</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 策略1：no action 不允许操作</span><br><span class="line">-- 通过操作sql来完成：</span><br><span class="line">-- 先把班级2的学生对应的班级 改为null </span><br><span class="line">update t_student set classno = null where classno = 2;</span><br><span class="line">-- 然后再删除班级2   </span><br><span class="line">delete from t_class where cno = 2;</span><br></pre></td></tr></table></figure>
@@ -834,25 +836,25 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * </span><br><span class="line">from emp</span><br><span class="line">left outer join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701170246.png" class title="image-20210701170246009">
+<img src="/2021/05/07/MySQL/20210701170246.png" alt="image-20210701170246009" style="zoom:67%;">
 
 <h5 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h5><p>右边的那个表的信息，即使不匹配也可以查看出结果</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701163643.png" class title="image-20210701163643122">
+<img src="/2021/05/07/MySQL/20210701163643.png" alt="image-20210701163643122" style="zoom:67%;">
 
 <h5 id="全外连接"><a href="#全外连接" class="headerlink" title="全外连接"></a>全外连接</h5><p>这个语法在mysql里面不支持，oracle才支持</p>
 <p>为了代替 可以取左外连接和右外连接的并集</p>
 <h6 id="并集-union"><a href="#并集-union" class="headerlink" title="并集 union"></a>并集 union</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * </span><br><span class="line">from emp</span><br><span class="line">left outer join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br><span class="line">union -- 并集，不去重，效率低</span><br><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701170831.png" class title="image-20210701170831388">
+<img src="/2021/05/07/MySQL/20210701170831.png" alt="image-20210701170831388" style="zoom:67%;">
 
 <h6 id="union-all"><a href="#union-all" class="headerlink" title="union all"></a>union all</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * </span><br><span class="line">from emp</span><br><span class="line">left outer join dept d</span><br><span class="line">on e.deptno = d.deptno</span><br><span class="line">union  all -- 不去重的并集， 效率高</span><br><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701171121.png" class title="image-20210701171121236">
+<img src="/2021/05/07/MySQL/20210701171121.png" alt="image-20210701171121236" style="zoom:67%;">
 
 
 
@@ -860,7 +862,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from emp;</span><br><span class="line">select * from dept;</span><br><span class="line">select * from salgrade；</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from emp e</span><br><span class="line">right outer join dept d</span><br><span class="line">on e.deptno = d.deptno;</span><br><span class="line">-- 可以看做就是上面的结果是一张表，然后再和第三张表进行连接</span><br><span class="line">inner join salgrade s</span><br><span class="line">on e.sal between salgrade</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>结果</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210701184545.png" class title="image-20210701184545238">
+<img src="/2021/05/07/MySQL/20210701184545.png" alt="image-20210701184545238" style="zoom:67%;">
 
 
 
@@ -990,18 +992,18 @@
 <ul>
 <li>事务一</li>
 </ul>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152258.png" class title="image-20210703145526739">
+<img src="/2021/05/07/MySQL/20210703152258.png" alt="image-20210703145526739" style="zoom:67%;">
 
 <ul>
 <li>事务二</li>
 </ul>
 <img src="/2021/05/07/MySQL/05/07/MySQL/20210703152314.png" class title="image-20210703145443742"></li>
 <li><p>事务一查询操作：</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152514.png" class title="image-20210703152514123"></li>
+<img src="/2021/05/07/MySQL/20210703152514.png" alt="image-20210703152514123" style="zoom:67%;"></li>
 <li><p>事务二更新操作，且没提交</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152552.png" class title="image-20210703152552191"></li>
+<img src="/2021/05/07/MySQL/20210703152552.png" alt="image-20210703152552191" style="zoom:67%;"></li>
 <li><p>事务一再次查询：</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210703152939.png" class title="image-20210703152939898">
+<img src="/2021/05/07/MySQL/20210703152939.png" alt="image-20210703152939898" style="zoom:67%;">
 
 <p>读到了在脏数据</p>
 </li>
@@ -1070,7 +1072,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 定义一个有返回值的存储过程</span><br><span class="line">-- in 参数前面的in可以不写</span><br><span class="line">-- out </span><br><span class="line">-- found_rows() 是mysql定义的一个函数，作用返回查询结果的条数</span><br><span class="line">-- into </span><br><span class="line">create procedure mypro02 (in name varchar(10),out num int(4))</span><br><span class="line">begin </span><br><span class="line">		if name is null or name = &quot;&quot; then</span><br><span class="line">				select * from emp;</span><br><span class="line">		else </span><br><span class="line">				select * from emp where name like concat(&#x27;%&#x27;,name,&#x27;%&#x27;);</span><br><span class="line">		end if;</span><br><span class="line">		select found_rows() into num;</span><br><span class="line">end;</span><br><span class="line">-- 调用存储过程</span><br><span class="line">call mypro02(null,@num);</span><br><span class="line">select @num;</span><br><span class="line">call mypro02(&#x27;A&#x27;,@aaa); -- 传入的参数名不一定要一样</span><br><span class="line">select @aaa;</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<img src="/2021/05/07/MySQL/05/07/MySQL/20210703191518.png" class title="image-20210703191518417"></li>
+<img src="/2021/05/07/MySQL/20210703191518.png" alt="image-20210703191518417" style="zoom:67%;"></li>
 </ul>
 ]]></content>
       <categories>
