@@ -20,31 +20,35 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Linux学习记录">
+    <meta name="description" content="MySQL8端口为0今天连接数据库的时候，密码正确，配置也没毛病，但是就是连不上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习">
-<meta property="og:url" content="http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="mysql8项目连接出错&amp;端口为0">
+<meta property="og:url" content="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/index.html">
 <meta property="og:site_name" content="Sonia33&#39;s Blog">
-<meta property="og:description" content="Linux学习记录">
+<meta property="og:description" content="MySQL8端口为0今天连接数据库的时候，密码正确，配置也没毛病，但是就是连不上">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png">
-<meta property="og:image" content="http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png">
-<meta property="article:published_time" content="2021-07-21T15:24:39.000Z">
-<meta property="article:modified_time" content="2022-05-07T02:05:25.694Z">
+<meta property="og:image" content="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141117583.png">
+<meta property="og:image" content="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141312668.png">
+<meta property="og:image" content="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141750537.png">
+<meta property="og:image" content="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141819985.png">
+<meta property="article:published_time" content="2022-05-10T06:23:51.000Z">
+<meta property="article:modified_time" content="2022-05-10T06:26:34.344Z">
 <meta property="article:author" content="Sonia33">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="踩雷">
+<meta property="article:tag" content="macos">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png">
+<meta name="twitter:image" content="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141117583.png">
 
 
-<link rel="canonical" href="http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/">
+<link rel="canonical" href="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/","path":"2021/07/21/Linux学习/","title":"Linux学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/","path":"2022/05/10/mysql8项目连接出错-端口为0/","title":"mysql8项目连接出错&端口为0"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Linux学习 | Sonia33's Blog</title>
+<title>mysql8项目连接出错&端口为0 | Sonia33's Blog</title>
   
 
 
@@ -147,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">常用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.</span> <span class="nav-text">启动网络</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL8%E7%AB%AF%E5%8F%A3%E4%B8%BA0"><span class="nav-number">1.</span> <span class="nav-text">MySQL8端口为0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">重装过程</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +227,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/iu.png">
@@ -236,12 +240,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Linux学习 | Sonia33's Blog">
-      <meta itemprop="description" content="Linux学习记录">
+      <meta itemprop="name" content="mysql8项目连接出错&端口为0 | Sonia33's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Linux学习
+          mysql8项目连接出错&端口为0
         </h1>
 
         <div class="post-meta-container">
@@ -251,15 +255,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-07-21 23:24:39" itemprop="dateCreated datePublished" datetime="2021-07-21T23:24:39+08:00">2021-07-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-07 10:05:25" itemprop="dateModified" datetime="2022-05-07T10:05:25+08:00">2022-05-07</time>
+      <time title="创建时间：2022-05-10 14:23:51 / 修改时间：14:26:34" itemprop="dateCreated datePublished" datetime="2022-05-10T14:23:51+08:00">2022-05-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,14 +265,17 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+          <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A1%B9%E7%9B%AE/bug/" itemprop="url" rel="index"><span itemprop="name">bug</span></a>
         </span>
     </span>
 
   
 </div>
 
-            <div class="post-description">Linux学习记录</div>
         </div>
       </header>
 
@@ -282,28 +283,51 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><ul>
-<li>启动网卡（仅针对单次可用）</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">nmcli c up ens33</span></span><br></pre></td></tr></table></figure>
+        <h2 id="MySQL8端口为0"><a href="#MySQL8端口为0" class="headerlink" title="MySQL8端口为0"></a>MySQL8端口为0</h2><p>今天连接数据库的时候，密码正确，配置也没毛病，但是就是连不上</p>
+<span id="more"></span>
 
-<ul>
-<li>修改配置文件（永久可用）</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/sysconfig/network-scripts/ifcfg-ens33</span></span><br></pre></td></tr></table></figure>
+<img src="/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141117583.png" alt="image-20220510141117583" style="zoom:67%;">
 
-<img src="/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/20210810165254.png" alt="image-20210810165233126" style="zoom:33%;">
+<p>于是去查了查端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show global variables like &#x27;port&#x27;;</span><br></pre></td></tr></table></figure>
 
-<p>ONBOOT=yes</p>
-<p>NAT模式</p>
-<p>在VMWare中默认使用的NAT模式</p>
-<ul>
-<li>Network Address Translation 网络地址转换，</li>
-</ul>
-<p>为什么要求改网络类型：因为给NAT模式外界不能访问windows里面的操作系统</p>
-<p>改成桥接模式</p>
-<img src="/2021/07/21/Linux%E5%AD%A6%E4%B9%A0/20210810165902.png" alt="image-20210810165902006" style="zoom: 33%;">
+<p>显示</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+---------------+-------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+---------------+-------+</span><br><span class="line">| port          | 0     |</span><br><span class="line">+---------------+-------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
 
+<p>竟然不是3306</p>
+<p>去网上查资料发现可能是之前某些操作让skip-networking打开了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">mysql&gt; </span><span class="language-bash">SHOW VARIABLES LIKE <span class="string">&quot;skip_networking&quot;</span>;</span></span><br><span class="line">+-----------------+-------+</span><br><span class="line">| Variable_name   | Value |</span><br><span class="line">+-----------------+-------+</span><br><span class="line">| skip_networking | ON    |</span><br><span class="line">+-----------------+-------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+
+<p>查了果然</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>需要将my.cnf中的skip_networking注释掉</p>
+<p>还是不行！！！</p>
+<p>最终 我还是重装了mysql5</p>
+<h4 id="重装过程"><a href="#重装过程" class="headerlink" title="重装过程"></a>重装过程</h4><p>卸载原来的mysql8 删干净点 我主要删了下面这些</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /usr/local/mysql</span><br><span class="line">sudo rm -rf /Library/StartupItems/M</span><br><span class="line">sudo rm -rf /Library/PreferencePanes/My*</span><br><span class="line">sudo rm -rf /Library/Receipts/mysql</span><br><span class="line">sudo rm -rf /var/db/receipts/com.mysql.</span><br><span class="line">sudo rm /tmp/mysql.sock</span><br><span class="line">sudo rm /tmp/mysql.sock.lock</span><br><span class="line">sudo rm /tmp/mysqlx.sock.lock</span><br><span class="line">sudo rm /tmp/mysqlx.sock</span><br></pre></td></tr></table></figure>
+
+<p>安装地址<a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<img src="/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141312668.png" alt="image-20220510141312668" style="zoom: 50%;">
+
+<p>然后注意安装完毕开启mysql服务</p>
+<p>在系统偏好里面</p>
+<img src="/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141750537.png" alt="image-20220510141750537" style="zoom: 50%;">
+
+<img src="/2022/05/10/mysql8%E9%A1%B9%E7%9B%AE%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E7%AB%AF%E5%8F%A3%E4%B8%BA0/image-20220510141819985.png" alt="image-20220510141819985" style="zoom: 50%;">
+
+<p>然后在iterm里面先要设置mysql命令行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias mysql=/usr/local/mysql/bin/mysql</span><br><span class="line">alias mysqladmin=/usr/local/mysql/bin/mysqladmin</span><br></pre></td></tr></table></figure>
+
+<p>设置新密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p password 你的密码</span><br></pre></td></tr></table></figure>
+
+<p>然后输入初始密码，应为mysql5.7会在通知栏里面把初始的密码发送给你</p>
+<p>这样就修改完了。</p>
+<p>查看数据库端口：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">mysql&gt; </span><span class="language-bash">show global variables like <span class="string">&#x27;port&#x27;</span>;</span></span><br><span class="line">+---------------+-------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+---------------+-------+</span><br><span class="line">| port          | 3306  |</span><br><span class="line">+---------------+-------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>!!!端口终于对了，打开项目连接数据库终于没有出错了！！！</p>
 
     </div>
 
@@ -330,21 +354,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+              <a href="/tags/%E8%B8%A9%E9%9B%B7/" rel="tag"># 踩雷</a>
+              <a href="/tags/macos/" rel="tag"># macos</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/07/20/JavaEE/" rel="prev" title="JavaEE">
-                  <i class="fa fa-chevron-left"></i> JavaEE
+                <a href="/2022/05/06/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22/" rel="prev" title="Hexo + GitHub搭建个人博客">
+                  <i class="fa fa-chevron-left"></i> Hexo + GitHub搭建个人博客
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/08/13/git/" rel="next" title="git">
-                  git <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
