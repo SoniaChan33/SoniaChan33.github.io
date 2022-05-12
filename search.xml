@@ -3047,7 +3047,7 @@ DEBUG： 指细粒度信息事件，对于应用程序的调试是最有用的
 <p>  –》 1048 - Column ‘sname’ cannot be null <strong>不能为null</strong></p>
 <p>  –》 819 - Check constraint ‘t_student_chk_1’ is violated. <strong>违反检查约束</strong></p>
 <p>  – 》1062 - Duplicate（重复的） entry ‘1’ for key ‘t_student.PRIMARY’ <strong>主键重复</strong></p>
-<p>  – 》1062 - Duplicate entry ‘<a href="mailto:&#x6c;&#x73;&#64;&#x31;&#50;&#54;&#46;&#x63;&#x6f;&#109;">&#x6c;&#x73;&#64;&#x31;&#50;&#54;&#46;&#x63;&#x6f;&#109;</a>‘ for key ‘t_student.email’ <strong>违反唯一约束</strong></p>
+<p>  – 》1062 - Duplicate entry ‘<a href="mailto:&#x6c;&#x73;&#x40;&#49;&#50;&#54;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#x73;&#x40;&#49;&#50;&#54;&#x2e;&#99;&#x6f;&#x6d;</a>‘ for key ‘t_student.email’ <strong>违反唯一约束</strong></p>
 <ul>
 <li>使用自增的时候用<strong>null和default</strong>都是可以</li>
 <li>如果sql报错，可能<strong>主键</strong>就浪费了，后续插入的主键是不连号的，主键也不要求连号的</li>
@@ -3682,6 +3682,7 @@ DEBUG： 指细粒度信息事件，对于应用程序的调试是最有用的
 </ul>
 ]]></content>
       <categories>
+        <category>面试</category>
         <category>笔记</category>
       </categories>
       <tags>
@@ -5718,6 +5719,205 @@ DEBUG： 指细粒度信息事件，对于应用程序的调试是最有用的
       <tags>
         <tag>Java</tag>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络IO面试题</title>
+    <url>/2022/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><img src="/2022/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/image-20220318165203569.png" alt="image-20220318165203569" style="zoom:33%;">
+
+<span id="more"></span>
+
+<p>是一个基于字节流的一个传输层的通信协议，在发送数据之前双方是需要建立一个连接的，这个所谓的连接就是双方都保存一个对方的ip地址还有端口等信息，然后TCP其实是一个字节流，头部就保存了这些信息，进行连接的时候有三个阶段：建立连接、传输数据、关闭连接，三次握手来建立，四次挥手来关闭，其中交换的报文都是tcp的头部。</p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>三次握手是一个在内核发生的一个行为，基于TCP协议，，首先呢，客户端应用启动以后，服务端进入listen状态，为了未来收到数据包做准备，然后在这个状态下内核进行了三次握手，</p>
+<ol>
+<li>首先第一次是客户端向服务端发送带有SYN，代表发送连接的标识，的一个报文，自己进入一个SYN-SENT状态，然后服务器接收进入SYN-RECV状态</li>
+<li>第二次是服务器发送带有SYN+ACK的报文，ACK是确认序号有效的标识，客户端接收进入established状态；</li>
+<li>然后就是最后一次握手 因为服务端还需要知道自己发送和对方接收是否成功，所以客户端发送带有ACK标识的报文，服务端接收到才进入establised状态，以上三次握手就进行完毕</li>
+</ol>
+<img src="/2022/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/image-20220318122004676.png" alt="image-20220318122004676" style="zoom:50%;">
+
+<p>然后在这里以后应用要进行接收，就得将连接的socket放入accept队列，需要IO模型，调用server.accept() 如果队列里面有就取出来传到应用里，这里就有两种模型分别是阻塞等待返回的BIO和无阻塞轮询返回的NIO；还有一种模型是多路复用器，调用select,poll,epoll，但是它只是做一个和内核调用来知道队列里面是否有事件，然后再去有效性地进行一个accep()方法的调用</p>
+<h3 id="四次分手"><a href="#四次分手" class="headerlink" title="四次分手"></a>四次分手</h3><img src="/2022/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/image-20220318142304657.png" alt="image-20220318142304657" style="zoom:50%;">
+
+<p>客户端完成数据传输，要准备释放连接的时候：</p>
+<ol>
+<li><p>进行第一次挥手，发一个带FIN（代表释放连接的标识）的报文给服务端然后进入FIN_WAIT1状态，服务接收到以后进入一个CLOSE-WAIT状态；</p>
+</li>
+<li><p>第二次挥手就是，服务器端向客户端发带ACK标识的报文，客户端接收后又进入FIN-WAIT状态，等待服务端将数据处理完毕收尾；</p>
+</li>
+<li><p>第三次服务端再去发送一个带FIN和ACK的报文，之前不一起发是因为服务端接收以后需要将数据发送进行完毕,在一个CLOSE-WAIT状态，搞定以后再发，客户端接收后进入TIME_WAIT状态；</p>
+</li>
+<li><p>然后就是第四次，客户端发送一个带ACK的报文给服务端，这里客户端的TIME-wait状态不能直接结束需要等待两倍报文寿命时间，再去closed，为什么是两倍报文寿命的时间是因为又肯呢个会出现服务器丢包的问题，但是服务端没接收到就会继续发送FIN，客户端要等待这么一个一去一回的时间来确认服务端没有再发送FIN，也就是确认服务端是否接收到，再去关闭，服务端接收到就会进入closed状态；</p>
+<p>以上就是我了解的四次挥手过程。</p>
+</li>
+</ol>
+<h3 id="与UDP的区别"><a href="#与UDP的区别" class="headerlink" title="与UDP的区别"></a>与UDP的区别</h3><p>udp  是用户数据协议，tcp是传输控制协议， 我就从这几个方面进行比较吧，首先一个是udp是无连接的，tcp是基于连接的， 第二个方面是他们的传输方式，udp 是报文， tcp是一个字节流，第三个是他们连接方式，udp是一对一一对多，多对多多对一的通信，而tcp只能是一对一，从这就可以看出第四方面他们的可靠性和安全性tcp明显是要高一些，也导致tcp首部要传输的信息很多，开销大，适用的场景就是文件传输，udp就可以在实时应用比如视频会议电话等场景用。</p>
+<h3 id="粘包"><a href="#粘包" class="headerlink" title="粘包"></a>粘包</h3><p>TCP协议是面向连接的可靠性协议。说它可靠并不表示数据信息一定会被对端接受，而是在传输失败后会放弃重传机制并中断连接来通知用户。它提供的只是数据可靠性的传输和故障通知。</p>
+<p>TCP是数据流传输，数据流是只有起点和终点的字节数据序列，只有输入流和输出流。根本不存在“包”的概念。粘包的包是应用层的包，应用层协议规定了包的结构和大小，本质上就是一段数据报文。比如一段http请求，</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//http 请求</span></span><br><span class="line">GET /hello.txt HTTP/<span class="number">1.1</span></span><br><span class="line">User-Agent: curl/<span class="number">7.16</span><span class="number">.3</span> libcurl/<span class="number">7.16</span><span class="number">.3</span> OpenSSL/<span class="number">0.9</span>.<span class="number">7l</span> zlib/<span class="number">1.2</span><span class="number">.3</span></span><br><span class="line">Host: www.example.com</span><br><span class="line">Accept-Language: en, mi</span><br></pre></td></tr></table></figure>
+
+<h4 id="TCP粘包的原因"><a href="#TCP粘包的原因" class="headerlink" title="TCP粘包的原因"></a>TCP粘包的原因</h4><p>首先粘包的情况可能是recv-buffer这个缓冲区里有a包的一部分，或者a包和b包的一部分都有，原因从<strong>发送端</strong>来讲可能是send发送数据的时候因为还没收到接收端的ACK，就暂时将数据填充到缓冲区中等待，<strong>接收端</strong>方面就可能是因为处理数据不及时，数据都堆在缓冲区，致使ab包相连。</p>
+<h4 id="如何解决粘包呢？"><a href="#如何解决粘包呢？" class="headerlink" title="如何解决粘包呢？"></a>如何解决粘包呢？</h4><ol>
+<li>固定包长度。每个包的大小都是一样的。</li>
+<li>在包中给定包大小。例如：（固定前4个字节为包大小）</li>
+<li>设置特定的结束标志。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">struct Message &#123;undefined</span><br><span class="line">    <span class="type">int</span> packSize;</span><br><span class="line">    <span class="type">int</span> type;</span><br><span class="line">    <span class="type">char</span> buf[<span class="number">100</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>http协议就是使用了上述的2，3方法。http使用”\r\n”为结束标识。</p>
+<p>当为post请求时则有content-Length标识请求体长度。</p>
+<h2 id="Connection-refused"><a href="#Connection-refused" class="headerlink" title="Connection refused"></a>Connection refused</h2><p>可能是一个网络问题，还有可能就是内核建立连接发给程序的时候，那个accept队列阻塞了。</p>
+<p>因为是内核帮助建立连接，程序必须通过listen里面的accept接收队列来进行一个等待程序的接收，有一个大小限制的backlog，如果队列满了可能就会造成一个报错， 是内核和程序之间发生的一个卡。</p>
+<h2 id="Session-Cookie-Token"><a href="#Session-Cookie-Token" class="headerlink" title="Session , Cookie, Token"></a>Session , Cookie, Token</h2><img src="/2022/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/image-20220318165316329.png" class title="image-20220318165316329">
+
+<p>因为http协议本身是一个无状态也就是浏览器没办法判断用户身份，然后cookie提供了暂时保存用户信息的一个作用，它其实是一个服务器放在浏览器上面的一个key-value形式的一个小文件，如果服务器需要保存用户状态，就通过response给客户端颁发一个cookie，下次浏览器再请求的时候再将cookie提交，服务器检查来进行辨认。</p>
+<p>而session呢，是域对象之一，是会话过程中服务器分的一块储存空间，但也是依赖着cookie实现的，浏览器会在cookie里面设置sessionid， 服务器根据sessionid取出session中存储的信息。</p>
+<p>两者区别呢就是存储空间的限制，session是没有限制的，cookie是有限制的，然后就是存储的位置，cookie是在浏览器上，session是在服务器端，这样安全性也就可以看出来cookie的不高，另一方面占用资源 session也会更多更加降低性能。</p>
+<p>而token呢，是因为客户端如果频繁向服务端请求数据，服务端频繁的去数据库查询会有很多压力，使用token呢，就会降低服务器压力，减少频繁访问数据库，增强健壮性，token是服务端产生的字符串，作为一个客户端请求的令牌，第一次登陆就生成给客户端，以后客户端就拿这个token来请求数据，不用用户名和密码。 和session的区别就是session存储在服务器端，而token是在浏览器端，并且还提供认证功能，安全性比session好，不会让服务器压力很大，适用于项目级的前后端分离项目，session只能在服务器和客户端在同一台机器的场景使用。</p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="常用HTTP状态码："><a href="#常用HTTP状态码：" class="headerlink" title="常用HTTP状态码："></a>常用HTTP状态码：</h3><table>
+<thead>
+<tr>
+<th>2XX</th>
+<th>成功（这系列表明请求被正常处理了）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>OK，表示从客户端发来的请求在服务器端被正确处理</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No   content，表示请求成功，但响应报文不含实体的主体部分</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Partial   Content  ，进行范围请求成功</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>重定向  （表明浏览器要执行特殊处理）</td>
+</tr>
+<tr>
+<td>301</td>
+<td>moved permanently，永久  性重定向，表示资源已被分配了新的 URL</td>
+</tr>
+<tr>
+<td>302</td>
+<td>found，临时性重定向，表示资源临时被分配了新的   URL</td>
+</tr>
+<tr>
+<td>303</td>
+<td>see   other，表示资源存在着另一个 URL，  应使用   GET 方法获取资源  （对于  301/302/  303响应，几乎所有浏览器都会删除报文主体并  自动用  GET重新请求）</td>
+</tr>
+<tr>
+<td>304</td>
+<td>not   modified ，表示服务器允许访问资源，但请求未满足条件的情况（与重定向无关）</td>
+</tr>
+<tr>
+<td>307</td>
+<td>temporary   redirect，临时重定  向，和302 含义类似，但是期望客户端保持请求方法不变向新的地址发出请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>客户端错误</td>
+</tr>
+<tr>
+<td>400</td>
+<td>bad   request，请求报文存在语法错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>unauthorized，表示发送的请求需要有通过   HTTP 认证的认证信息</td>
+</tr>
+<tr>
+<td>403</td>
+<td>forbidden  ，表示对请求资源的访问被服务器拒绝，可在实体主体部分返回原因描述</td>
+</tr>
+<tr>
+<td>404</td>
+<td>not   found，表示在服务器上没有找到请求的资源</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>服务器错误</td>
+</tr>
+<tr>
+<td>500</td>
+<td>internal   sever   error，表  示服务器端在执行请求时发生了错误</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Not   Implemented，表示服务器不支持当前请求所需要的某个功能</td>
+</tr>
+<tr>
+<td>503</td>
+<td>service unavailable，表明服务器暂时处于超负载或正在停机维护，无法处理请求</td>
+</tr>
+</tbody></table>
+<h3 id="HTTP1和HTTP2"><a href="#HTTP1和HTTP2" class="headerlink" title="HTTP1和HTTP2"></a>HTTP1和HTTP2</h3><p>HTTP2 可以提高了网页的性能。</p>
+<p>在 HTTP1 中浏览器限制了同一个域名下的请求数量（Chrome 下一般是六</p>
+<p>个），当在请求很多资源的时候，由于队头阻塞当浏览器达到  大请求数量时，剩余的资源需等待当前的六个请求完成后才能发起请求。</p>
+<p>HTTP2 中引入了多路复用的技术，这个技术可以只通过一个 TCP 连接就可以传输所有的请求数据。多路复用可以绕过浏览器限制同一个域名下的请求数量的问题，进而提高了网页的性能。</p>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><p>HTTP 是一个在计算机世界里专门在两点之间传输文字、图片、音频、视频等超文本数据的约定和规范</p>
+<table>
+<thead>
+<tr>
+<th>区别</th>
+<th>HTTP</th>
+<th>HTTPS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>运行在   TCP 之上，明文传输，客户端与服务器端都无法验证对方的身份</td>
+<td>身披 SSL(   Secure   Socket   Layer  )外壳的   HTTP，运行于 SSL 上，SSL 运行于   TCP 之  上，  是添加了加密和认证机制的   HTTP。</td>
+</tr>
+<tr>
+<td>端口</td>
+<td>80</td>
+<td>443</td>
+</tr>
+<tr>
+<td>资源消耗</td>
+<td>较少</td>
+<td>由于加解密处理，会消耗更  多的 CPU 和内存资源</td>
+</tr>
+<tr>
+<td>开销</td>
+<td>无需证书</td>
+<td>需要证书，而证书一般需要向认证机构购买</td>
+</tr>
+<tr>
+<td>加密机制</td>
+<td>无</td>
+<td>共享密钥加密和公开密钥加密并用的混合加密机制</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>弱</td>
+<td>由于加密机制，安全性强</td>
+</tr>
+</tbody></table>
+<h2 id="get和post的区别"><a href="#get和post的区别" class="headerlink" title="==get和post的区别=="></a>==get和post的区别==</h2><img src="/2022/05/12/%E7%BD%91%E7%BB%9CIO%E9%9D%A2%E8%AF%95%E9%A2%98/image-20220318165233672.png" alt="image-20220318165233672" style="zoom:50%;">
+
+<ul>
+<li>GET在浏览器回退时是无害的，而POST会再次提交请求。</li>
+<li>GET产生的URL地址可以被Bookmark，而POST不可以。</li>
+<li>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</li>
+<li>GET请求只能进行url编码，而POST支持多种编码方式。</li>
+<li>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</li>
+<li>GET请求在URL中传送的参数是有长度限制的，而POST则没有。对参数的数据类型GET只接受ASCII字符，而POST即可是字符也可是字节。</li>
+<li>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</li>
+<li>GET参数通过URL传递，POST放在Request body中。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+        <tag>IO</tag>
       </tags>
   </entry>
 </search>
