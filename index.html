@@ -251,7 +251,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-05-16 10:25:28 / 修改时间：10:27:25" itemprop="dateCreated datePublished" datetime="2022-05-16T10:25:28+08:00">2022-05-16</time>
+      <time title="创建时间：2022-05-16 10:25:28 / 修改时间：10:28:31" itemprop="dateCreated datePublished" datetime="2022-05-16T10:25:28+08:00">2022-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,36 +275,14 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="分布式-更新ing"><a href="#分布式-更新ing" class="headerlink" title="分布式(更新ing)"></a>分布式(更新ing)</h2><p>分布式项目的整合：</p>
 <p><a target="_blank" rel="noopener" href="https://www.processon.com/view/link/6281b28c0e3e746f2b12d0ee">https://www.processon.com/view/link/6281b28c0e3e746f2b12d0ee</a></p>
-<pre><code>分布式架构会把一个项目按照特定要求（多按照模块或功能）拆分成多个项目，每个项目分别部署到不同的服务器上。
-</code></pre>
-<h3 id="RMI"><a href="#RMI" class="headerlink" title="RMI"></a>RMI</h3><p>运程方法调用</p>
-<img src="/2022/05/16/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/image-20220516101255871.png" alt="image-20220516101255871" style="zoom:67%;">
-
-<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><h5 id="Remote"><a href="#Remote" class="headerlink" title="Remote"></a>Remote</h5><p>​            远程调用接口</p>
-<h5 id="RemoteException"><a href="#RemoteException" class="headerlink" title="RemoteException"></a>RemoteException</h5><p>​            承了Remote接口的接口中，如果方法是允许被远程调用的，需要抛出此异常。</p>
-<h5 id="UnicastRemoteObject"><a href="#UnicastRemoteObject" class="headerlink" title="UnicastRemoteObject"></a>UnicastRemoteObject</h5><p>​                java.rmi.server.UnicastRemoteObject<br>​                此类实现了Remote接口和Serializable接口。<br>​                自定义接口实现类除了实现自定义接口还需要继承此类。</p>
-<h5 id="LocateRegistry"><a href="#LocateRegistry" class="headerlink" title="LocateRegistry"></a>LocateRegistry</h5><p>​                java.rmi.registry.LocateRegistry<br>​                可以通过LocateRegistry在本机上创建Registry，通过特定的端口就可以访问这个Registry。</p>
-<h5 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h5><p>​                java.rmi.Naming<br>​                Naming定义了发布内容可访问RMI名称。也是通过Naming获取到指定的远程方法。</p>
-<h3 id="zookeeper注册中心"><a href="#zookeeper注册中心" class="headerlink" title="zookeeper注册中心"></a>zookeeper注册中心</h3><img src="/2022/05/16/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/image-20220516101724270.png" alt="image-20220516101724270" style="zoom:67%;">
-
-<h4 id="客户端常用命令"><a href="#客户端常用命令" class="headerlink" title="客户端常用命令"></a>客户端常用命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls [-s][-R] /path</span><br><span class="line">			查看列表</span><br><span class="line">get [-s] /path</span><br><span class="line">			查看内容</span><br><span class="line">create /path [data]</span><br><span class="line">			创建指定路径信息</span><br><span class="line">set /path data</span><br><span class="line">			设置节点内容</span><br><span class="line">delete /path</span><br><span class="line">			删除节点</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="注册内容"><a href="#注册内容" class="headerlink" title="注册内容"></a>注册内容</h4><p>创建/demo<br>2     添加依赖<br>3     编写代码<br>            创建zk对象获取连接<br>                new watcher()内部重写process()<br>            发布任务create()<br>                ZooDefs.Ids.OPEN_ACL_UNSAFE<br>                    表示权限<br>                CreateMode.PERSISTENT_SEQUENTIAL<br>                    永久存储，文件内容编号递增<br>        4     查看上传数据</p>
-<h4 id="查看内容"><a href="#查看内容" class="headerlink" title="查看内容"></a>查看内容</h4><p>​        创建zk对象获取连接<br>​            new watcher()内部重写process()<br>​        获取列表<br>​            zookeeper.getChildren(“/demo”, false)<br>​            zookeeper.getData(“/demo/“ + child, false, null);</p>
-<p>RPC实现(RMI+Zookeeper)</p>
-<h3 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h3><img src="/2022/05/16/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/image-20220516101839047.png" alt="image-20220516101839047" style="zoom:67%;">
-
-<p>​    分布式服务框架<br>​    负载均衡<br>​        负载均衡是在集群前提下，当访问整个集群时，集群中每个节点被访问次数或频率的规则。<br>​        设置<br>​            @Reference 客户端<br>​                注入的是分布式中的远程服务对象<br>​                @Reference(loadbalance = “roundrobin”)<br>​                    调用的服务采用的负载均衡算法<br>​            @Service服务端<br>​                @Service(loadbalance = “random”)<br>​                    当前服务采用的负载均衡算法<br>​                @Service(weight = 4)<br>​                    设置权重<br>​        内置策略<br>​            Random<br>​                    随机。随机访问集群中节点。访问概率和权重有关。<br>​            RoundRobin<br>​                    轮询。访问频率和权重有关。<br>​                性能好的服务器权重应该高一些。<br>​            LeastActive<br>​                    活跃数相同的随机,活跃数高的放前面。<br>​            ConsistentHash<br>​                hash 相同参数发送到同一个提供者<br>​    完整项目<br>​        provider<br>​            dubbo.protocal.port<br>​                需要设置端口</p>
-<h3 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h3><img src="/2022/05/16/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/image-20220516101905531.png" alt="image-20220516101905531" style="zoom:67%;">
-
-<p>​    由Erlang语言编写的基于AMQP的消息中间件。<br>​    消息中间件作为分布式系统重要组件之一，可以解决应用耦合，异步消息，流量削峰等问题。<br>​    账号管理<br>​        1 创建账户<br>​            ./rabbitmqctl add_user username password<br>​        2 给用户授予管理员角色</p>
-<p>./rabbitmqctl set_user_tags mashibing administrator</p>
-<p>​        3 给用户授权<br>​            ./rabbitmqctl set_permissions -p “/“ mashibing “.<em>“ “.</em>“ “.*”<br>​        4 登录<br>​    交换机<br>​        direct 默认<br>​        fanout 广播<br>​            FanoutExchage<br>​            Binding<br>​                绑定交换器和队列<br>​            BindingBuilder<br>​                Bind构造器<br>​            amq.fanout<br>​                内置fanout交换器名称<br>​        topic主题<br>​            运行RoutingKey包含匹配规则<br>​                binding方法里面第二个参数<br>​            BindingBuilder.bind(topicQueue).to(topicExchange).with(“com.a”);<br>​        Header首部</p>
-<h3 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h3><p>​    分布式文件系统<br>​    架构<br>​        角色<br>​            client<br>​            Tracker Server<br>​                跟踪服务器<br>​                    调度 负载均衡、记录集群状态信息、连接client和storage的枢纽<br>​            Storage Server<br>​                存储服务器<br>​                    文件和文件属性存储的地方<br>​        文件上传流程<br>​            1.  客户端访问Tracker<br>​            2.  Tracker 返回Storage的ip和端口<br>​            3.  客户端直接访问Storage，把文件内容和元数据发送过去。<br>​            4.  Storage返回文件存储id。包含了组名和文件名</p>
-<h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><p>​    反向代理服务<br>​        代理方式<br>​            正向<br>​                架设在客户机和目标主机之间<br>​                代理客户端，服务端不知道实际发起请求的客户端；<br>​            反向<br>​                架设在服务器端；<br>​                代理服务端，客户端不知道实际提供服务的服务端；<br>​    作用<br>​        HTTP协议代理<br>​          搭建虚拟主机<br>​        负载均衡</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/16/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
