@@ -1595,7 +1595,7 @@
 <p>用户名中不能有数字</p>
 <p>密码不少于5位</p>
 <p>两次密码必须一致</p>
-<p>邮箱格式正确 必须有@和.  例如<a href="mailto:&#49;&#50;&#x33;&#52;&#53;&#54;&#x37;&#56;&#x39;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;">&#49;&#50;&#x33;&#52;&#53;&#54;&#x37;&#56;&#x39;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p>邮箱格式正确 必须有@和.  例如<a href="mailto:&#49;&#50;&#x33;&#x34;&#53;&#x36;&#x37;&#x38;&#57;&#x40;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#49;&#50;&#x33;&#x34;&#53;&#x36;&#x37;&#x38;&#57;&#x40;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <h4 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h4><p><img src="/2021/06/18/JQuery/Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20210731144934316.png" alt="image-20210731144934316"></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><a href="#form%E8%A1%A8%E5%8D%95%E5%BA%94%E7%94%A8%E6%AD%A3%E5%88%99">代码改进</a></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.对于表单的提交，要给form标签绑定onSubmit事件，而不是给submit按钮绑定onClick事件,onsubmit绑定的方法时要有return关键字,绑定的方法要返回true/false</p>
@@ -2172,7 +2172,7 @@
 <p>免密操作使每次需要push仓库的时候，都不用再输入密码434</p>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>Git</category>
       </categories>
       <tags>
         <tag>Git</tag>
@@ -3748,7 +3748,7 @@ DEBUG： 指细粒度信息事件，对于应用程序的调试是最有用的
       <tags>
         <tag>踩雷</tag>
         <tag>MySQL</tag>
-        <tag>macos</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
@@ -6241,6 +6241,35 @@ DEBUG： 指细粒度信息事件，对于应用程序的调试是最有用的
       <tags>
         <tag>多线程</tag>
         <tag>并发编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>m1 2020配置java后端环境</title>
+    <url>/2021/09/12/m1-2020%E9%85%8D%E7%BD%AEjava%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="m1-2020配置java后端环境"><a href="#m1-2020配置java后端环境" class="headerlink" title="m1 2020配置java后端环境"></a>m1 2020配置java后端环境</h1><h2 id="1-安装JDK"><a href="#1-安装JDK" class="headerlink" title="1 安装JDK"></a>1 安装JDK</h2><p>OracleJDK暂时并不支持arm架构的芯片，我们需要使用openjdk：zulu版本 <a href="https://links.jianshu.com/go?to=https://www.azul.com/downloads/?package=jdk%23download-openjdk">地址</a> </p>
+<p>安装完成 终端输入<code>java --version</code></p>
+<img src="/2021/09/12/m1-2020%E9%85%8D%E7%BD%AEjava%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83/image-20220105102457083.png" alt="image-20220105102457083" style="zoom:50%;">
+
+<h4 id="配置问题！！！"><a href="#配置问题！！！" class="headerlink" title="配置问题！！！"></a>配置问题！！！</h4><p>😭m1 默认是zsh 不是bash 一开始不知道的我 把所有配置全部输入到 bash_profile 然后看maven版本却显示</p>
+<img src="/2021/09/12/m1-2020%E9%85%8D%E7%BD%AEjava%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83/008i3skNgy1gy2mx6qgabj30qy02q74q.jpg" alt="image-20220105112802157" style="zoom:50%;">
+
+<p>想要更换bash 和 zsh模式可以参考这个： <a href="https://www.jianshu.com/p/3d93f23454d8">mac中bash和zsh终端切换方法和zsh配置</a></p>
+<figure class="highlight vim"><figcaption><span>./zshrc ```添加配置（可以**修改版本**）</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home<br>#export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 2 安装homebrew</span><br><span class="line"></span><br><span class="line">homebrew 是macos的包管理工具</span><br><span class="line"></span><br><span class="line">在终端输入 ```/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;```</span><br><span class="line"></span><br><span class="line">选择镜像 </span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/008i3skNgy1gy2l6681ocj30vu0eytbd.jpg&quot; alt=&quot;image-20220105102727012&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">安装完毕查看 ```brew -v```</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/008i3skNgy1gy2l75gne0j30vm03aaam.jpg&quot; alt=&quot;image-20220105102825749&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">## 3 安装maven</span><br><span class="line"></span><br><span class="line">在第一步里面安装的homebrew是在mac隐藏文件夹 **/opt**下的  maven也同样最好安装在**/opt**下</span><br><span class="line"></span><br><span class="line">如果找不到opt 可以将文件夹显示 在访达  **command+shift+.**  隐藏的文件夹就会显示</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/008i3skNgy1gy2n8jgqxhj30c60dk3yt.jpg&quot; alt=&quot;image-20220105104745708&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">我们将[官网的maven](https://maven.apache.org/download.cgi)（见下图）拖到 **/opt**下</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/008i3skNgy1gy2lp0zdtvj314u088abg.jpg&quot; alt=&quot;image-20220105104526757&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/008i3skNgy1gy2n9im9rzj30ra0go0tj.jpg&quot; alt=&quot;image-20220105104910817&quot; style=&quot;zoom: 25%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">#### 配置maven</span><br><span class="line"></span><br><span class="line">```vim ~./zshrc```</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>export MAVEN_HOME=/opt/apache-maven-3.8.4<br>export PATH=$PATH:$MAVEN_HOME/bin</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">查看 ```mvn -v```</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/image-20220614185135880.png&quot; alt=&quot;image-20220614185135880&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">这样就配置成功啦！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 4 下载npm</span><br><span class="line"></span><br><span class="line">brew install npm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 5 下载iterm2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1. 下载iTerm2</span><br><span class="line">   我是在官网下载安装的 </span><br><span class="line"></span><br><span class="line">https://www.iterm2.com/index.html</span><br><span class="line"></span><br><span class="line">也可以使用Homebrew安装</span><br><span class="line"></span><br><span class="line">$ brew cask install iterm2</span><br><span class="line">使用brew cask要先安装cask，下面粗略给出cask的介绍。</span><br><span class="line"></span><br><span class="line">homebrew-cask与brew的区别:</span><br><span class="line"></span><br><span class="line">brew是下载源码解压然后./configure &amp;&amp; make install, 并且会自动配置好环境变量。</span><br><span class="line"></span><br><span class="line">brew cask主要用于有GUI的软件，下载已经编译好的应用包(.dmg/.pkg)。</span><br><span class="line"></span><br><span class="line">安装brew cask:</span><br><span class="line"></span><br><span class="line">$ brew install caskroom/cask/brew-cask</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 6 配置node.js + typora + picgo</span><br><span class="line"></span><br><span class="line">下载node.js </span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;m1-2020配置java后端环境/image-20220614185208815.png&quot; alt=&quot;image-20220614185208815&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">安装完成进行以下步骤</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line"># 查看node 安装路径</span><br><span class="line">tinachan@tinadeair ~ % which node</span><br><span class="line">/usr/local/bin/node</span><br><span class="line"># npm安装picgo</span><br><span class="line">tinachan@tinadeair ~ % sudo npm install picgo -g</span><br><span class="line"></span><br><span class="line"># 查看picgo安装路径</span><br><span class="line">tinachan@tinadeair ~ % which picgo</span><br><span class="line">/opt/homebrew/bin/picgo</span><br><span class="line"># 设置gitee插件</span><br><span class="line">tinachan@tinadeair ~ % picgo install gitee-uploader</span><br><span class="line"># 设置插件 ：只需要填repo 和 token</span><br><span class="line">tinachan@tinadeair ~ % picgo set uploader</span><br><span class="line">? Choose a(n) uploader gitee</span><br><span class="line">? repo: # 填仓库名（格式：用户名/仓库名）</span><br><span class="line">? branch: master</span><br><span class="line">? token: # 填私人令牌</span><br><span class="line">? path: </span><br><span class="line">? customPath: default</span><br><span class="line">? customUrl: </span><br><span class="line">[PicGo SUCCESS]: Configure config successfully!</span><br><span class="line"># 设置use uploader</span><br><span class="line">tinachan@tinadeair ~ % picgo use uploader</span><br><span class="line">? Use an uploader gitee</span><br><span class="line">[PicGo SUCCESS]: Configure config successfully!</span><br></pre></td></tr></table></figure>
+
+<p>到typora设置</p>
+<img src="/2021/09/12/m1-2020%E9%85%8D%E7%BD%AEjava%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83/image-20220614185957433.png" alt="image-20220614185957433" style="zoom:50%;">
+
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>
